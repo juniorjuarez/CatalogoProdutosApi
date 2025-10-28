@@ -1,7 +1,7 @@
 using Catalogo.Application.DTOs;
 using Catalogo.Application.Services;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.Extensions.Caching.Memory;
 
 
 namespace CatalogoProdutos.API.Controllers

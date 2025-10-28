@@ -1,8 +1,9 @@
 using AutoMapper;
+using Catalogo.Application.Constants;
 using Catalogo.Application.DTOs;
 using Catalogo.Core.Entities;
 using Catalogo.Core.Interfaces;
-
+using Microsoft.Extensions.Caching.Memory;
 namespace Catalogo.Application.Services
 {
     public class ProdutoService : IProdutoService
@@ -11,17 +12,27 @@ namespace Catalogo.Application.Services
 
         private readonly IProdutoRepository _repository;
         private readonly IMapper _mapper;
+        private readonly IMemoryCache _cache;
 
-        public ProdutoService(IProdutoRepository repository, IMapper mapper)
+        public ProdutoService(IProdutoRepository repository, IMapper mapper, IMemoryCache cache)
         {
             _repository = repository;
             _mapper = mapper;
+            _cache = cache;
+
         }
 
         public async Task<IEnumerable<ProdutoResponseDTO>> GetProdutosAsync()
         {
-            var produtos = await _repository.GetAllAsync();
-            return _mapper.Map<IEnumerable<ProdutoResponseDTO>>(produtos);
+
+            var produtoDTO = await _cache.GetOrCreateAsync(CacheKeys.PRODUTOS_KEY, async entry =>
+            {
+                entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10);
+                var produtos = await _repository.GetAllAsync();
+                return _mapper.Map<IEnumerable<ProdutoResponseDTO>>(produtos);
+
+            });
+            return produtoDTO;
 
         }
         public async Task<ProdutoResponseDTO?> GetProdutoByIdAsync(int id)
@@ -34,7 +45,8 @@ namespace Catalogo.Application.Services
 
             var produto = _mapper.Map<Produto>(produtoDTO);
             var produtoSalvo = await _repository.CreateAsync(produto);
-
+            _cache.Remove(CacheKeys.PRODUTOS_KEY);
+            _cache.Remove(CacheKeys.CATEGORIAS_PRODUTOS_KEY);
             return _mapper.Map<ProdutoResponseDTO>(produtoSalvo);
         }
         public async Task<ProdutoResponseDTO> UpdateProdutoAsync(int id, ProdutoCreateDTO produtoDTO)
@@ -46,8 +58,10 @@ namespace Catalogo.Application.Services
             _mapper.Map(produtoDTO, produto);
 
             var produtoAtualizado = await _repository.UpdateAsync(produto);
+            _cache.Remove(CacheKeys.PRODUTOS_KEY);
+            _cache.Remove(CacheKeys.CATEGORIAS_PRODUTOS_KEY);
 
-            return _mapper.Map<ProdutoResponseDTO>(produto);
+            return _mapper.Map<ProdutoResponseDTO>(produtoAtualizado);
 
         }
 
@@ -57,6 +71,8 @@ namespace Catalogo.Application.Services
             if (produto == null) return false;
 
             await _repository.DeleteAsync(produto);
+            _cache.Remove(CacheKeys.PRODUTOS_KEY);
+            _cache.Remove(CacheKeys.CATEGORIAS_PRODUTOS_KEY);
             return true;
         }
     }

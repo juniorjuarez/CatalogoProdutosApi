@@ -4,8 +4,8 @@ using Catalogo.Application.Services;
 using Catalogo.Core.Interfaces;
 using Catalogo.Infrastructure.Data.Context;
 using Catalogo.Infrastructure.Repositories;
-
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 // ...e outros que o EF e o AutoMapper precisam
 
 
@@ -37,6 +37,7 @@ builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
 builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 builder.Services.AddScoped<IProdutoService, ProdutoService>();
 
+builder.Services.AddMemoryCache();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
