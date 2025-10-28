@@ -15,3 +15,4 @@ C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\UDEMY\Macoratti\APICatalog
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\Catalogo.Infrastructure\obj\Debug\net8.0\Catalogo.Infrastructure.pdb
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\Catalogo.Infrastructure\obj\Debug\net8.0\Catalogo.Infrastructure.genruntimeconfig.cache
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\Catalogo.Infrastructure\obj\Debug\net8.0\ref\Catalogo.Infrastructure.dll
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\Catalogo.Infrastructure\obj\Debug\net8.0\Catalogo.Infrastructure.sourcelink.json

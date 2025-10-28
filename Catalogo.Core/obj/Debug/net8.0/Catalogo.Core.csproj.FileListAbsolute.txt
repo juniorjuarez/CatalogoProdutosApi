@@ -9,3 +9,4 @@ C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\UDEMY\Macoratti\APICatalog
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\refint\Catalogo.Core.dll
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\Catalogo.Core.pdb
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\ref\Catalogo.Core.dll
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\Catalogo.Core.sourcelink.json
