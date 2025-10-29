@@ -969,7 +969,6 @@ C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos
 C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos.API\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos.API\obj\Debug\net8.0\Catalogo.B4AED9FC.Up2Date
 C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos.API\obj\Debug\net8.0\CatalogoProdutos.API.dll
 C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos.API\obj\Debug\net8.0\refint\CatalogoProdutos.API.dll
