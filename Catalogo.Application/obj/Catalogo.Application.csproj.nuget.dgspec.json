@@ -1,33 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj": {}
+    "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Catalogo.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj": {
+    "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Catalogo.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj",
+        "projectUniqueName": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Catalogo.Application.csproj",
         "projectName": "Catalogo.Application",
-        "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj",
-        "packagesPath": "C:\\Users\\jose.santos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Application\\obj\\",
+        "projectPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Catalogo.Application.csproj",
+        "packagesPath": "C:\\Users\\junio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\jose.santos\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\junio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj": {
-                "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj"
+              "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Catalogo.Core.csproj": {
+                "projectPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Catalogo.Core.csproj"
               }
             }
           }
@@ -41,7 +47,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -52,6 +59,10 @@
               "version": "[12.0.1, )"
             },
             "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",
               "version": "[9.0.10, )"
             }
@@ -72,26 +83,32 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj": {
+    "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Catalogo.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj",
+        "projectUniqueName": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Catalogo.Core.csproj",
         "projectName": "Catalogo.Core",
-        "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj",
-        "packagesPath": "C:\\Users\\jose.santos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\obj\\",
+        "projectPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Catalogo.Core.csproj",
+        "packagesPath": "C:\\Users\\junio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\jose.santos\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\junio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -109,7 +126,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -130,7 +148,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

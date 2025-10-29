@@ -6,6 +6,9 @@ using Catalogo.Infrastructure.Data.Context;
 using Catalogo.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Caching.Distributed;
+using System.Text.Json.Serialization;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
 // ...e outros que o EF e o AutoMapper precisam
 
 
@@ -38,6 +41,15 @@ builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 builder.Services.AddScoped<IProdutoService, ProdutoService>();
 
 builder.Services.AddMemoryCache();
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    // A string de conexão mais segura para usar o Redis do Docker
+    options.Configuration = "localhost:6379";
+    // Você pode usar um prefixo para as chaves no Redis (opcional)
+    options.InstanceName = "CatalogoAPI_";
+});
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

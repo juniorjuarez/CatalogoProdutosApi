@@ -3,7 +3,10 @@ using Catalogo.Application.Constants;
 using Catalogo.Application.DTOs;
 using Catalogo.Core.Entities;
 using Catalogo.Core.Interfaces;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
+using System.Text.Json;
 
 namespace Catalogo.Application.Services
 {
@@ -12,9 +15,10 @@ namespace Catalogo.Application.Services
 
         private readonly ICategoriaRepository _repository;
         private readonly IMapper _mapper;
-        private readonly IMemoryCache _cache;
+        //private readonly IMemoryCache _cache;
+        private readonly IDistributedCache _cache;
 
-        public CategoriaService(ICategoriaRepository repository, IMapper mapper, IMemoryCache cache)
+        public CategoriaService(ICategoriaRepository repository, IMapper mapper, IDistributedCache cache)
         {
             _repository = repository;
             _mapper = mapper;
@@ -24,49 +28,102 @@ namespace Catalogo.Application.Services
 
         public async Task<IEnumerable<CategoriaResponseDTO>> GetCategoriasAsync()
         {
+            IEnumerable<CategoriaResponseDTO>? categoriasDtos = null;
 
+            string cachekey = CacheKeys.CATEGORIAS_KEY;
 
-            var categoriasDTO = await _cache.GetOrCreateAsync(CacheKeys.CATEGORIAS_KEY, async entry =>
+            string? categoriasJson = await _cache.GetStringAsync(cachekey);
+
+            if (categoriasJson != null)
             {
-                entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10);
+                categoriasDtos = JsonSerializer.Deserialize<IEnumerable<CategoriaResponseDTO>>(categoriasJson);
+                return categoriasDtos;
+            }
+            else
+            {
                 var categorias = await _repository.GetAllAsync();
-                return _mapper.Map<IEnumerable<CategoriaResponseDTO>>(categorias);
-            });
+                categoriasDtos = _mapper.Map<IEnumerable<CategoriaResponseDTO>>(categorias);
 
-            return categoriasDTO;
+                categoriasJson = JsonSerializer.Serialize(categoriasDtos);
+                var cacheOptions = new DistributedCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(10));
+                await _cache.SetStringAsync(cachekey, categoriasJson, cacheOptions);
+            }
+
+
+
+            return categoriasDtos ?? Enumerable.Empty<CategoriaResponseDTO>();
 
         }
         public async Task<CategoriaResponseDTO?> GetCategoriaByIdAsync(int id)
         {
-            var categoria = await _repository.GetByIdAsync(c => c.CategoriaId == id);
-            return _mapper.Map<CategoriaResponseDTO>(categoria);
+            CategoriaResponseDTO? categoriaDto = null;
+
+            string cachekey = CacheKeys.CategoriaPrefix + id;
+
+            string? categoriaJson = await _cache.GetStringAsync(cachekey);
+
+            if (categoriaJson != null)
+            {
+                categoriaDto = JsonSerializer.Deserialize<CategoriaResponseDTO>(categoriaJson);
+                return categoriaDto;
+            }
+            else
+            {
+                var categoria = await _repository.GetByIdAsync(c => c.CategoriaId == id);
+                categoriaDto = _mapper.Map<CategoriaResponseDTO>(categoria);
+
+                var cacheOprions = new DistributedCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(10));
+                categoriaJson = JsonSerializer.Serialize(categoriaDto);
+
+                await _cache.SetStringAsync(cachekey, categoriaJson, cacheOprions);
+
+            }
+            return categoriaDto;
         }
 
         public async Task<IEnumerable<CategoriaResponseProdutosDTO?>> GetCategoriasProdutosAsync()
         {
 
-            var categoriasDTO = await _cache.GetOrCreateAsync(CacheKeys.CATEGORIAS_PRODUTOS_KEY, async entry =>
-            {
-                entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10);
-                var categorias = await _repository.GetCategoriasProdutosAsync();
-                return _mapper.Map<IEnumerable<CategoriaResponseProdutosDTO>>(categorias);
-            });
+            IEnumerable<CategoriaResponseProdutosDTO>? categoriaDtos = null;
 
-            return categoriasDTO;
+            string cachekey = CacheKeys.CATEGORIAS_PRODUTOS_KEY;
+            string? categoriasJson = await _cache.GetStringAsync(cachekey);
+
+            if (categoriasJson != null)
+            {
+                categoriaDtos = JsonSerializer.Deserialize<IEnumerable<CategoriaResponseProdutosDTO>>(categoriasJson);
+                return categoriaDtos;
+            }
+            else
+            {
+
+                var categorias = await _repository.GetCategoriasProdutosAsync();
+                categoriaDtos = _mapper.Map<IEnumerable<CategoriaResponseProdutosDTO>>(categorias);
+
+                categoriasJson = JsonSerializer.Serialize(categoriaDtos);
+                var cacheOptions = new DistributedCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(10));
+                await _cache.SetStringAsync(cachekey, categoriasJson, cacheOptions);
+
+            }
+
+
+            return categoriaDtos;
         }
 
 
         public async Task<CategoriaResponseDTO> CreateCategoriaAsync(CategoriaCreateDTO categoriaDto)
         {
+
             var categoria = _mapper.Map<Categoria>(categoriaDto);
 
             var categoriaSalva = await _repository.CreateAsync(categoria);
-            _cache.Remove(CacheKeys.CATEGORIAS_PRODUTOS_KEY);
-            _cache.Remove(CacheKeys.CATEGORIAS_KEY);
+            await _cache.RemoveAsync(CacheKeys.CATEGORIAS_PRODUTOS_KEY);
+            await _cache.RemoveAsync(CacheKeys.CATEGORIAS_KEY);
             return _mapper.Map<CategoriaResponseDTO>(categoriaSalva);
         }
         public async Task<CategoriaResponseDTO> UpdateCategoriaAsync(int id, CategoriaCreateDTO categoriaDto)
         {
+            string cachekey = CacheKeys.CategoriaPrefix + id;
             var categoria = await _repository.GetByIdAsync(c => c.CategoriaId == id);
 
             if (categoria == null) return null;
@@ -75,14 +132,16 @@ namespace Catalogo.Application.Services
 
 
             var catgoriaAtualizada = await _repository.UpdateAsync(categoria);
-            _cache.Remove(CacheKeys.CATEGORIAS_PRODUTOS_KEY);
-            _cache.Remove(CacheKeys.CATEGORIAS_KEY);
+            await _cache.RemoveAsync(cachekey);
+            await _cache.RemoveAsync(CacheKeys.CATEGORIAS_PRODUTOS_KEY);
+            await _cache.RemoveAsync(CacheKeys.CATEGORIAS_KEY);
 
             return _mapper.Map<CategoriaResponseDTO>(catgoriaAtualizada);
 
         }
         public async Task<bool> DeleteCategoriaAsync(int id)
         {
+            string cachekey = CacheKeys.CategoriaPrefix + id;
             var categoria = await _repository.GetByIdAsync(c => c.CategoriaId == id);
 
             if (categoria == null)
@@ -91,8 +150,9 @@ namespace Catalogo.Application.Services
             }
 
             await _repository.DeleteAsync(categoria);
-            _cache.Remove(CacheKeys.CATEGORIAS_PRODUTOS_KEY);
-            _cache.Remove(CacheKeys.CATEGORIAS_KEY);
+            await _cache.RemoveAsync(cachekey);
+            await _cache.RemoveAsync(CacheKeys.CATEGORIAS_PRODUTOS_KEY);
+            await _cache.RemoveAsync(CacheKeys.CATEGORIAS_KEY);
             return true;
         }
 
