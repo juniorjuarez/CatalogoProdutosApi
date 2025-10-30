@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|c:\\users\\junio\\source\\repos\\catalogoproduto\\catalogoprodutosapi\\catalogo.application\\services\\hybridcacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|solutionrelative:catalogo.application\\services\\hybridcacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE4A3DB-4965-4BD7-AA32-0F1EE18926B5}|Catalogo.Core\\Catalogo.Core.csproj|c:\\users\\junio\\source\\repos\\catalogoproduto\\catalogoprodutosapi\\catalogo.core\\interfaces\\ihybridcacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE4A3DB-4965-4BD7-AA32-0F1EE18926B5}|Catalogo.Core\\Catalogo.Core.csproj|solutionrelative:catalogo.core\\interfaces\\ihybridcacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|c:\\users\\junio\\source\\repos\\catalogoproduto\\catalogoprodutosapi\\catalogo.application\\services\\categoriaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|solutionrelative:catalogo.application\\services\\categoriaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|c:\\users\\junio\\source\\repos\\catalogoproduto\\catalogoprodutosapi\\catalogo.application\\services\\produtoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|solutionrelative:catalogo.application\\services\\produtoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|c:\\users\\junio\\source\\repos\\catalogoproduto\\catalogoprodutosapi\\catalogo.application\\constants\\cachekeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|solutionrelative:catalogo.application\\constants\\cachekeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|c:\\users\\junio\\source\\repos\\catalogoproduto\\catalogoprodutosapi\\catalogo.application\\services\\produtoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|solutionrelative:catalogo.application\\services\\produtoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D7E77A8F-F6DA-463F-AD60-B7BC595EFA05}|CatalogoProdutos.API\\CatalogoProdutos.API.csproj|c:\\users\\junio\\source\\repos\\catalogoproduto\\catalogoprodutosapi\\catalogoprodutos.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CacheKeys.cs",
               "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Constants\\CacheKeys.cs",
               "RelativeDocumentMoniker": "Catalogo.Application\\Constants\\CacheKeys.cs",
@@ -44,7 +52,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HybridCacheService.cs",
+              "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Services\\HybridCacheService.cs",
+              "RelativeDocumentMoniker": "Catalogo.Application\\Services\\HybridCacheService.cs",
+              "ToolTip": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Services\\HybridCacheService.cs",
+              "RelativeToolTip": "Catalogo.Application\\Services\\HybridCacheService.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAswCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T15:24:37.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "IHybridCacheService.cs",
+              "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Interfaces\\IHybridCacheService.cs",
+              "RelativeDocumentMoniker": "Catalogo.Core\\Interfaces\\IHybridCacheService.cs",
+              "ToolTip": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Interfaces\\IHybridCacheService.cs",
+              "RelativeToolTip": "Catalogo.Core\\Interfaces\\IHybridCacheService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T15:21:12.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ProdutoService.cs",
               "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Services\\ProdutoService.cs",
               "RelativeDocumentMoniker": "Catalogo.Application\\Services\\ProdutoService.cs",
@@ -52,25 +86,24 @@
               "RelativeToolTip": "Catalogo.Application\\Services\\ProdutoService.cs",
               "ViewState": "AgIAAFsAAAAAAAAAAAAYwIUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T00:45:01.647Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-29T00:45:01.647Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "CategoriaService.cs",
               "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Services\\CategoriaService.cs",
               "RelativeDocumentMoniker": "Catalogo.Application\\Services\\CategoriaService.cs",
               "ToolTip": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Services\\CategoriaService.cs",
               "RelativeToolTip": "Catalogo.Application\\Services\\CategoriaService.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAowDQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-28T15:03:48.395Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\CatalogoProdutos.API\\Program.cs",
               "RelativeDocumentMoniker": "CatalogoProdutos.API\\Program.cs",
@@ -78,8 +111,7 @@
               "RelativeToolTip": "CatalogoProdutos.API\\Program.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAAD4AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T14:51:53.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T14:51:53.816Z"
             }
           ]
         }
