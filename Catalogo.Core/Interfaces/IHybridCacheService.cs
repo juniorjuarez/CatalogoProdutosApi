@@ -8,12 +8,12 @@ namespace Catalogo.Core.Interfaces
 {
     public interface IHybridCacheService
     {
-        Task<T>? GetOrCreatAsync<T>(
+        Task<T>? GetOrCreateAsync<T>(
             string cacheKeyL1,
             string cacheKeyL2,
             Func<Task<T>> factory,
-            TimeSpan? absoluteExporationL1 = null,
-            TimeSpan? absoluteExporationL2 = null
+            TimeSpan? absoluteExpirationL1 = null,
+            TimeSpan? absoluteExpirationL2 = null
 
             );
 
