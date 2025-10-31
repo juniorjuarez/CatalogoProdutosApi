@@ -47,8 +47,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-29T00:32:08.906Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -73,8 +72,7 @@
               "RelativeToolTip": "Catalogo.Core\\Interfaces\\IHybridCacheService.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T15:21:12.192Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-29T15:21:12.192Z"
             },
             {
               "$type": "Document",
@@ -98,8 +96,7 @@
               "RelativeToolTip": "Catalogo.Application\\Services\\CategoriaService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T15:03:48.395Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T15:03:48.395Z"
             },
             {
               "$type": "Document",
