@@ -41,19 +41,49 @@ namespace Catalogo.Application.Services
             if (!string.IsNullOrEmpty(resultJsonL2))
             {
                 var resultL2 = JsonSerializer.Deserialize<T>(resultJsonL2);
+
                 if (resultL2 != null)
                 {
                     var memoryCacheEntryOptions = new MemoryCacheEntryOptions();
+
                     if (absoluteExpirationL1.HasValue)
                     {
-                        memoryCacheEntryOptions.SetSlidingExpiration(absoluteExpirationL1.Value);
+                        memoryCacheEntryOptions.SetAbsoluteExpiration(absoluteExpirationL1.Value);
                     }
+                    _memoryCache.Set(cacheKeyL1, resultL2, memoryCacheEntryOptions);
+
                     return resultL2;
                 }
             }
 
-            await Task.CompletedTask;
+            var resultL3 = await factory();
+
+            if (resultL3 != null)
+            {
+                var distributedCacheEntryOptions = new DistributedCacheEntryOptions();
+
+                if (absoluteExpirationL2.HasValue)
+                {
+                    distributedCacheEntryOptions.SetAbsoluteExpiration(absoluteExpirationL2.Value);
+
+                }
+
+                await _distributedCache.SetStringAsync(cacheKeyL2, JsonSerializer.Serialize(resultL3), distributedCacheEntryOptions);
+
+                var memoryCacheEntryOptions = new MemoryCacheEntryOptions();
+
+                if (absoluteExpirationL1.HasValue)
+                {
+                    memoryCacheEntryOptions.SetAbsoluteExpiration(absoluteExpirationL1.Value);
+                }
+                _memoryCache.Set(cacheKeyL1, resultL3, memoryCacheEntryOptions);
+
+                return resultL3;
+            }
+
+
             return default;
+
 
         }
 
@@ -63,6 +93,7 @@ namespace Catalogo.Application.Services
         {
             _memoryCache.Remove(cacheKeyL1);
             await _distributedCache.RemoveAsync(cacheKeyL2);
+
 
         }
     }
