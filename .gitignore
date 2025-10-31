@@ -1,0 +1,22 @@
+﻿# Arquivos e Pastas de Build (Essenciais para Ignorar)
+[Bb]in/
+[Oo]bj/
+*.pdb
+*.suo
+
+# Cache do Visual Studio (Aqui estava a pasta que causou o erro de permissão)
+.vs/
+*.user
+
+# Pacotes e Dependências
+packages/
+*.nupkg
+*.cache
+
+# Resultados de Teste e Logs
+TestResults/
+*.trx
+*.log
+
+# Arquivos de Sistema e de Ambiente
+Thumbs.db

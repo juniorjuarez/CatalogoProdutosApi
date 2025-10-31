@@ -9,5 +9,6 @@ namespace Catalogo.Application.Constants
         public const string ProdutoPrefix = "Produto_";
 
 
+
     }
 }
