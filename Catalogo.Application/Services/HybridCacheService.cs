@@ -23,7 +23,7 @@ namespace Catalogo.Application.Services
             _distributedCache = distributedCache;
         }
 
-        public async Task<T>? GetOrCreateAsync<T>(
+        public async Task<T> GetOrCreateAsync<T>(
 
             string cacheKeyL1,
             string cacheKeyL2,

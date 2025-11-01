@@ -42,6 +42,7 @@ builder.Services.AddScoped<IProdutoService, ProdutoService>();
 
 builder.Services.AddMemoryCache();
 builder.Services.AddDistributedMemoryCache();
+builder.Services.AddScoped<IHybridCacheService, HybridCacheService>();
 
 builder.Services.AddStackExchangeRedisCache(options =>
 {
