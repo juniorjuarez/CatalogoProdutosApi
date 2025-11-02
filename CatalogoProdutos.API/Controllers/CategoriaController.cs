@@ -74,9 +74,9 @@ namespace CatalogoProdutos.API.Controllers
                 return Ok(categoriasProdutosDTO);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao realizar a solicitação.");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao realizar a solicitação: {ex}");
             }
 
         }

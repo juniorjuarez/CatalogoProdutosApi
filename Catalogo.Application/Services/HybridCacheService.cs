@@ -1,12 +1,9 @@
 ﻿using System.Text.Json;
-using AutoMapper;
-using Catalogo.Application.Constants;
-using Catalogo.Application.DTOs;
-using Catalogo.Core.Entities;
+
 using Catalogo.Core.Interfaces;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Caching.StackExchangeRedis;
+
 
 namespace Catalogo.Application.Services
 {
@@ -28,8 +25,8 @@ namespace Catalogo.Application.Services
             string cacheKeyL1,
             string cacheKeyL2,
             Func<Task<T>> factory,
-            TimeSpan? absoluteExpirationL1 = null,
-            TimeSpan? absoluteExpirationL2 = null
+            TimeSpan? absoluteExpirationL1,
+            TimeSpan? absoluteExpirationL2
          )
         {
             if (_memoryCache.TryGetValue(cacheKeyL1, out T? resultL1) && resultL1 != null)

@@ -3,10 +3,7 @@ using Catalogo.Application.Constants;
 using Catalogo.Application.DTOs;
 using Catalogo.Core.Entities;
 using Catalogo.Core.Interfaces;
-using Microsoft.Extensions.Caching.Distributed;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Caching.StackExchangeRedis;
-using System.Text.Json;
+
 
 
 namespace Catalogo.Application.Services
@@ -17,9 +14,10 @@ namespace Catalogo.Application.Services
 
         private readonly IProdutoRepository _repository;
         private readonly IMapper _mapper;
-        //private readonly IMemoryCache _cache;
-        //private readonly IDistributedCache _cache;
         private readonly IHybridCacheService _cache;
+
+        public TimeSpan cacheExpirationL1 =  CacheKeys.ABSOLUTE_EXPIRATION_L1;
+        public TimeSpan cacheExpirationL2 = CacheKeys.ABSOLUTE_EXPIRATION_L2;
 
         public ProdutoService(IProdutoRepository repository, IMapper mapper, IHybridCacheService cache)
         {
@@ -32,10 +30,11 @@ namespace Catalogo.Application.Services
         public async Task<IEnumerable<ProdutoResponseDTO>> GetProdutosAsync()
 
 
-        {
-   
 
-            string cacheKeyL1 = $"{CacheKeys.PRODUTOS_KEY}";
+        {
+
+
+               string cacheKeyL1 = $"{CacheKeys.PRODUTOS_KEY}";
             string cacheKeyL2 = $"{CacheKeys.PRODUTOS_KEY}";
 
             var produtoDtos = await _cache.GetOrCreateAsync(
@@ -50,8 +49,9 @@ namespace Catalogo.Application.Services
                 return _mapper.Map<IEnumerable<ProdutoResponseDTO>>(produtos);
 
             },
-                absoluteExpirationL1: TimeSpan.FromMinutes(5),
-                absoluteExpirationL2: TimeSpan.FromMinutes(30)
+
+                cacheExpirationL1,
+                cacheExpirationL2
 
       );
 
@@ -67,20 +67,22 @@ namespace Catalogo.Application.Services
             string cacheKeyL2 = $"{CacheKeys.ProdutoPrefix}{id}";
 
 
-            var produto = await _cache.GetOrCreateAsync<Produto>(cacheKeyL1, cacheKeyL2, factory: async () =>
-            {
-                return await _repository.GetByIdAsync(p => p.ProdutoId == id);
-            },
-      absoluteExpirationL1: TimeSpan.FromMinutes(5),
-      absoluteExpirationL2: TimeSpan.FromMinutes(30)
-  );
+            var produtoDto = await _cache.GetOrCreateAsync
+                (
+                    cacheKeyL1, 
+                    cacheKeyL2, 
+                    factory: async () =>
+                        {
+                            var produto = await _repository.GetByIdAsync(p => p.ProdutoId == id);
+                            if (produto == null) return null;
+                            return _mapper.Map<ProdutoResponseDTO>(produto);
 
-            if (produto == null)
-            {
+                        },
+                cacheExpirationL1,
+                cacheExpirationL2
+                  );
 
-                return null;
-            }
-            return _mapper.Map<ProdutoResponseDTO>(produto);
+            return produtoDto;
         }
 
         public async Task<ProdutoResponseDTO> CreateProdutoAsync(ProdutoCreateDTO produtoDTO)
@@ -137,7 +139,7 @@ namespace Catalogo.Application.Services
             if (produto == null) return false;
 
 
-
+            await _repository.DeleteAsync(produto);
 
             await _cache.RemoveAsync(cacheKeyL1ProductId, cacheKeyL2ProductId);
             await _cache.RemoveAsync(cacheKeyL1ProductAll, cacheKeyL2ProductAll);

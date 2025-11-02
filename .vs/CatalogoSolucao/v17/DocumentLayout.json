@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|c:\\users\\junio\\source\\repos\\catalogoproduto\\catalogoprodutosapi\\catalogo.application\\constants\\cachekeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|solutionrelative:catalogo.application\\constants\\cachekeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|c:\\users\\junio\\source\\repos\\catalogoproduto\\catalogoprodutosapi\\catalogo.application\\services\\produtoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|solutionrelative:catalogo.application\\services\\produtoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,8 +11,8 @@
       "RelativeMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|solutionrelative:catalogo.application\\services\\hybridcacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86462F7F-76CE-429C-B7D8-2BD48577C847}|Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj|c:\\users\\junio\\source\\repos\\catalogoproduto\\catalogoprodutosapi\\catalogo.infrastructure\\repositories\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86462F7F-76CE-429C-B7D8-2BD48577C847}|Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj|solutionrelative:catalogo.infrastructure\\repositories\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|c:\\users\\junio\\source\\repos\\catalogoproduto\\catalogoprodutosapi\\catalogo.application\\constants\\cachekeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|solutionrelative:catalogo.application\\constants\\cachekeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{86462F7F-76CE-429C-B7D8-2BD48577C847}|Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj|c:\\users\\junio\\source\\repos\\catalogoproduto\\catalogoprodutosapi\\catalogo.infrastructure\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,8 +23,8 @@
       "RelativeMoniker": "D:0:0:{86462F7F-76CE-429C-B7D8-2BD48577C847}|Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj|solutionrelative:catalogo.infrastructure\\data\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAE4A3DB-4965-4BD7-AA32-0F1EE18926B5}|Catalogo.Core\\Catalogo.Core.csproj|c:\\users\\junio\\source\\repos\\catalogoproduto\\catalogoprodutosapi\\catalogo.core\\interfaces\\iprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAE4A3DB-4965-4BD7-AA32-0F1EE18926B5}|Catalogo.Core\\Catalogo.Core.csproj|solutionrelative:catalogo.core\\interfaces\\iprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|c:\\users\\junio\\source\\repos\\catalogoproduto\\catalogoprodutosapi\\catalogo.application\\services\\categoriaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B401629C-6A7D-4863-B945-2D9261F26879}|Catalogo.Application\\Catalogo.Application.csproj|solutionrelative:catalogo.application\\services\\categoriaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,58 +34,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "CacheKeys.cs",
               "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Constants\\CacheKeys.cs",
               "RelativeDocumentMoniker": "Catalogo.Application\\Constants\\CacheKeys.cs",
               "ToolTip": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Constants\\CacheKeys.cs",
               "RelativeToolTip": "Catalogo.Application\\Constants\\CacheKeys.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T18:45:23.107Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HybridCacheService.cs",
-              "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Services\\HybridCacheService.cs",
-              "RelativeDocumentMoniker": "Catalogo.Application\\Services\\HybridCacheService.cs",
-              "ToolTip": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Services\\HybridCacheService.cs",
-              "RelativeToolTip": "Catalogo.Application\\Services\\HybridCacheService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T18:44:13.179Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProdutoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Infrastructure\\Repositories\\ProdutoRepository.cs",
-              "RelativeDocumentMoniker": "Catalogo.Infrastructure\\Repositories\\ProdutoRepository.cs",
-              "ToolTip": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Infrastructure\\Repositories\\ProdutoRepository.cs",
-              "RelativeToolTip": "Catalogo.Infrastructure\\Repositories\\ProdutoRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T18:42:46.455Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Infrastructure\\Data\\Context\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Catalogo.Infrastructure\\Data\\Context\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Infrastructure\\Data\\Context\\AppDbContext.cs",
-              "RelativeToolTip": "Catalogo.Infrastructure\\Data\\Context\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T18:42:36.443Z",
+              "WhenOpened": "2025-11-02T20:45:36.625Z",
               "EditorCaption": ""
             },
             {
@@ -102,39 +59,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IProdutoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Interfaces\\IProdutoRepository.cs",
-              "RelativeDocumentMoniker": "Catalogo.Core\\Interfaces\\IProdutoRepository.cs",
-              "ToolTip": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Interfaces\\IProdutoRepository.cs",
-              "RelativeToolTip": "Catalogo.Core\\Interfaces\\IProdutoRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA9AAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "HybridCacheService.cs",
+              "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Services\\HybridCacheService.cs",
+              "RelativeDocumentMoniker": "Catalogo.Application\\Services\\HybridCacheService.cs",
+              "ToolTip": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Services\\HybridCacheService.cs",
+              "RelativeToolTip": "Catalogo.Application\\Services\\HybridCacheService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T18:41:00.458Z",
+              "WhenOpened": "2025-11-01T18:44:13.179Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Infrastructure\\Data\\Context\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Catalogo.Infrastructure\\Data\\Context\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Infrastructure\\Data\\Context\\AppDbContext.cs",
+              "RelativeToolTip": "Catalogo.Infrastructure\\Data\\Context\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T18:42:36.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CategoriaService.cs",
+              "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Services\\CategoriaService.cs",
+              "RelativeDocumentMoniker": "Catalogo.Application\\Services\\CategoriaService.cs",
+              "ToolTip": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Services\\CategoriaService.cs",
+              "RelativeToolTip": "Catalogo.Application\\Services\\CategoriaService.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAwwFwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T19:34:58.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "ProdutoService.cs",
               "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Services\\ProdutoService.cs",
               "RelativeDocumentMoniker": "Catalogo.Application\\Services\\ProdutoService.cs",
-              "ToolTip": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Services\\ProdutoService.cs*",
-              "RelativeToolTip": "Catalogo.Application\\Services\\ProdutoService.cs*",
-              "ViewState": "AgIAACoAAAAAAAAAAAAowEEAAAA+AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Services\\ProdutoService.cs",
+              "RelativeToolTip": "Catalogo.Application\\Services\\ProdutoService.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAowEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-01T18:39:04.461Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Repository.cs",
               "DocumentMoniker": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Infrastructure\\Repositories\\Repository.cs",
               "RelativeDocumentMoniker": "Catalogo.Infrastructure\\Repositories\\Repository.cs",
               "ToolTip": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Infrastructure\\Repositories\\Repository.cs",
               "RelativeToolTip": "Catalogo.Infrastructure\\Repositories\\Repository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABIAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-01T18:38:21.031Z",
               "EditorCaption": ""
