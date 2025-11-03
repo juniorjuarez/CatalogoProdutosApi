@@ -7,7 +7,7 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace CatalogoProdutos.API.Controllers
 {
-    [Route("controller")]
+    [Route("[controller]")]
     [ApiController]
     public class CategoriaController : ControllerBase
     {
