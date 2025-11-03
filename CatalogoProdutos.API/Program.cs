@@ -1,14 +1,12 @@
-using System.Text.Json.Serialization;
 using Catalogo.Application.Mappings;
 using Catalogo.Application.Services;
 using Catalogo.Core.Interfaces;
 using Catalogo.Infrastructure.Data.Context;
 using Catalogo.Infrastructure.Repositories;
+using CatalogoProdutos.API.Middleware;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Caching.Distributed;
 using System.Text.Json.Serialization;
-using Microsoft.Extensions.Caching.StackExchangeRedis;
+
 // ...e outros que o EF e o AutoMapper precisam
 
 
@@ -65,8 +63,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
 app.UseHttpsRedirection();
+app.UseMiddleware<GlobalExceptionMiddleware>();
 app.MapControllers();
 
 app.Run();
