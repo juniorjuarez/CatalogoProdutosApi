@@ -23,7 +23,7 @@ namespace CatalogoProdutos.API.Middleware
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Ocorreu uma exceção não tratada: {ex.Message}");
+                _logger.LogError(ex, "Ocorreu uma exceção não tratada: {Message}", ex.Message);
                 context.Response.ContentType = "application/problem+json";
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
 
@@ -36,7 +36,7 @@ namespace CatalogoProdutos.API.Middleware
                 };
 
                 var responseJson = JsonSerializer.Serialize(problemDetails);
-                context.Response.WriteAsync(responseJson);
+                await context.Response.WriteAsync(responseJson);
                
 
             }
