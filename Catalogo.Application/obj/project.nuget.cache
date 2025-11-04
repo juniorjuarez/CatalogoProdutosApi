@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "JVejn0ZQ26I=",
+  "dgSpecHash": "bXQpGVt6KtM=",
   "success": true,
   "projectFilePath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Catalogo.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\junio\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\junio\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\junio\\.nuget\\packages\\fluentvalidation\\12.1.0\\fluentvalidation.12.1.0.nupkg.sha512",
     "C:\\Users\\junio\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\junio\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.10\\microsoft.extensions.caching.abstractions.9.0.10.nupkg.sha512",
     "C:\\Users\\junio\\.nuget\\packages\\microsoft.extensions.caching.memory\\9.0.10\\microsoft.extensions.caching.memory.9.0.10.nupkg.sha512",

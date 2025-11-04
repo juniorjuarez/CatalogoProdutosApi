@@ -1,6 +1,7 @@
 using AutoMapper;
 using Catalogo.Application.Constants;
 using Catalogo.Application.DTOs;
+using Catalogo.Application.Interfaces;
 using Catalogo.Core.Entities;
 using Catalogo.Core.Interfaces;
 

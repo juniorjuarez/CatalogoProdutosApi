@@ -1,3 +1,4 @@
+using Catalogo.Application.Interfaces;
 using Catalogo.Application.Mappings;
 using Catalogo.Application.Services;
 using Catalogo.Core.Interfaces;
@@ -6,6 +7,9 @@ using Catalogo.Infrastructure.Repositories;
 using CatalogoProdutos.API.Middleware;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
+using FluentValidation.AspNetCore; // <--- PASSO 1: ADICIONE ESTE USING
+using FluentValidation; // <--- PASSO 1: ADICIONE ESTE USING
+using Catalogo.Application.Validators;
 
 // ...e outros que o EF e o AutoMapper precisam
 
@@ -23,6 +27,10 @@ builder.Services.AddControllers().AddJsonOptions(options =>
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
 });
 
+
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<ProductCreateDTOValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<CategoryCreateDTOValidator>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 

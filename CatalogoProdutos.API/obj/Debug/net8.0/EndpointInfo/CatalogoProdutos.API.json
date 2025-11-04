@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/controller": {
+    "/Categoria": {
       "get": {
         "tags": [
           "Categoria"
@@ -72,7 +72,7 @@
         }
       }
     },
-    "/controller/{id}": {
+    "/Categoria/{id}": {
       "get": {
         "tags": [
           "Categoria"
@@ -174,7 +174,7 @@
         }
       }
     },
-    "/controller/produtos": {
+    "/Categoria/produtos": {
       "get": {
         "tags": [
           "Categoria"

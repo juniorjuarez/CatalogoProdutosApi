@@ -1,5 +1,5 @@
 using Catalogo.Application.DTOs;
-using Catalogo.Application.Services;
+using Catalogo.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -52,12 +52,6 @@ namespace CatalogoProdutos.API.Controllers
         public async Task<ActionResult> Post(ProdutoCreateDTO produtoDTO)
         {
 
-
-            if (produtoDTO is null)
-            {
-                return BadRequest();
-            }
-
             var produtoResponseDTO = await _service.CreateProdutoAsync(produtoDTO);
 
             return new CreatedAtRouteResult("ObterProduto", new { id = produtoResponseDTO.ProdutoId }, produtoResponseDTO);
@@ -68,8 +62,6 @@ namespace CatalogoProdutos.API.Controllers
         public async Task<ActionResult> Put(int id, ProdutoCreateDTO produtoCreateDTO)
         {
 
-
-            if (produtoCreateDTO is null) return BadRequest("Dados inválidos.");
 
             var produtoResponseDTO = await _service.UpdateProdutoAsync(id, produtoCreateDTO);
 
@@ -82,9 +74,6 @@ namespace CatalogoProdutos.API.Controllers
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
-
-
-
 
             var produto = await _service.DeleteProdutoAsync(id);
             if (!produto)

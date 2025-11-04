@@ -71,11 +71,6 @@ namespace CatalogoProdutos.API.Controllers
         {
 
 
-            if (categoriaDTO is null)
-            {
-                return BadRequest();
-            }
-
             var categoriaResponseDTO = await _service.CreateCategoriaAsync(categoriaDTO);
 
             return new CreatedAtRouteResult("ObterCategoria", new { id = categoriaResponseDTO.CategoriaId }, categoriaResponseDTO);
@@ -86,9 +81,6 @@ namespace CatalogoProdutos.API.Controllers
         [HttpPut("{id:int}")]
         public async Task<ActionResult> Put(int id, CategoriaCreateDTO categoriaDTO)
         {
-
-
-            if (categoriaDTO == null) return BadRequest("Dados inválidos.");
 
             var categoria = await _service.UpdateCategoriaAsync(id, categoriaDTO);
 

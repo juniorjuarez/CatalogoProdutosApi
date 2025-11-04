@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Runtime.Intrinsics.X86;
 using System.Text.Json;
 
 namespace CatalogoProdutos.API.Middleware
@@ -32,7 +31,7 @@ namespace CatalogoProdutos.API.Middleware
 
                 {
                     Status = StatusCodes.Status500InternalServerError,
-                    Title = "Erro interno no servuidor",
+                    Title = "Erro interno no servidor",
                     Detail = "Ocorreu um erro inesperado. Por favor, tente novamente mais tarde."
                 };
 

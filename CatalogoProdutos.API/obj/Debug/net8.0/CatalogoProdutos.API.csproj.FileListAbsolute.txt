@@ -979,3 +979,6 @@ C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos
 C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos.API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
 C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos.API\bin\Debug\net8.0\StackExchange.Redis.dll
 C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos.API\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos.API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\junio\source\repos\CatalogoProduto\CatalogoProdutosApi\CatalogoProdutos.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

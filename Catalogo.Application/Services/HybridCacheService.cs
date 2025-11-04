@@ -1,5 +1,5 @@
 ﻿using System.Text.Json;
-
+using Catalogo.Application.Interfaces;
 using Catalogo.Core.Interfaces;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
