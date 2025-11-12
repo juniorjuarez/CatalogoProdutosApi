@@ -1,49 +1,171 @@
-# API de Gerenciamento de Catálogo e Estoque (.NET)
+# API de Catálogo de Produtos (.NET 8)
 
-![Status: Em Construção](https://img.shields.io/badge/status-em_construção-yellow)
-![.NET](https://img.shields.io/badge/.NET-8-blueviolet)
-![Cache](https://img.shields.io/badge/Cache-Redis_&_InMemory-red)
-![Arquitetura](https://img.shields.io/badge/Arquitetura-Clean_Architecture-blue)
+[![.NET 8](https://img.shields.io/badge/.NET-8-blueviolet?style=for-the-badge&logo=.net)](https://dotnet.microsoft.com/pt-br/download/dotnet/8.0)
+[![Arquitetura](https://img.shields.io/badge/Arquitetura-Clean%20Architecture-blue?style=for-the-badge)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+[![Cache](https://img.shields.io/badge/Cache-Redis%20%26%20In--Memory-red?style=for-the-badge&logo=redis)](https://redis.io/)
+[![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=for-the-badge)]()
 
-## 🎯 Sobre o Projeto
+Uma API REST robusta para gerenciamento de catálogo e inventário (Produtos e Categorias), construída com .NET 8, Clean Architecture e foco em performance e boas práticas.
 
-Este projeto é o back-end (API REST) para um sistema de gerenciamento de inventário. O objetivo é construir uma aplicação robusta e escalável para controlar produtos, categorias, kits e o ciclo de vida do estoque (entradas, saídas e ajustes).
+## 🚀 Demonstração em Ação
 
-A aplicação está sendo desenvolvida com foco em performance e nas melhores práticas de mercado, utilizando **Clean Architecture** para garantir um código desacoplado e manutenível.
+### Gerenciamento de Categorias (CRUD)
+*(Fluxo: `GET` (vazio) -> `POST` (criação) -> `GET` (com dados))*
 
-## ✨ Features Técnicas Principais
+![Demonstração de Categorias](docs/assets/demo-categoria.gif)
 
-* **Arquitetura Limpa:** Projeto dividido em 4 camadas (Core, Application, Infrastructure, API).
-* **Padrão Repository Genérico:** Abstração do acesso a dados com `IRepository<T>`.
+### Gerenciamento de Produtos (CRUD)
+*(Fluxo: `GET` (vazio) -> `POST` (criação) -> `GET` (com dados))*
+
+![Demonstração de Produtos](docs/assets/demo-produto.gif)
+
+---
+
+## ✨ Principais Features e Conceitos Aplicados
+
+Este projeto não é apenas um CRUD, mas um *playground* para demonstrar conceitos avançados de arquitetura e performance:
+
+* **Clean Architecture:** O projeto é segregado em 4 camadas (Core, Application, Infrastructure, API) seguindo a **Regra da Dependência**, garantindo baixo acoplamento e alta testabilidade.
+* **Princípios SOLID:**
+    * **S (Single Responsibility):** Cada Service, Repository e Controller tem uma única responsabilidade.
+    * **O (Open/Closed):** O uso de Injeção de Dependência e Interfaces (`IRepository`, `ICacheService`) permite estender o comportamento (ex: adicionar um novo banco ou cache) sem modificar o código existente.
+    * **L (Liskov Substitution):** O uso do `Repository<T>` genérico é um exemplo claro.
+    * **I (Interface Segregation):** Interfaces específicas como `IProdutoRepository` segregam contratos que o `IRepository<T>` genérico não cobre.
+    * **D (Dependency Inversion):** A camada `Application` depende de abstrações (`Interfaces` do Core) e não de implementações (`Infrastructure`).
 * **Cache Híbrido (L1/L2):**
-    * **L1:** Cache em memória (`IMemoryCache`) para acesso ultrarrápido.
-    * **L2:** Cache distribuído com **Redis** (`IDistributedCache`) para dados compartilhados.
-* **Invalidação de Cache:** Estratégia de remoção de chaves em operações de escrita (CUD) para evitar dados obsoletos.
-* **Otimização de EF Core:** Uso de `AsNoTracking()` em leituras e `Include()` para carregar dados relacionados (evitando N+1).
-* **Injeção de Dependência:** Todo o projeto é configurado via DI.
-* **Padrão DTO e AutoMapper:** Separação total entre modelos de domínio e modelos de API.
+    * **L1 (In-Memory):** Cache em memória (`IMemoryCache`) para acesso ultra-rápido a dados frequentemente consultados.
+    * **L2 (Distributed):** Cache distribuído com **Redis** (`IDistributedCache`) para garantir consistência entre múltiplas instâncias da aplicação.
+    * **Invalidação Ativa:** O cache é invalidado (removido) automaticamente em operações de escrita (Create, Update, Delete) para evitar dados obsoletos.
+* **Repository Pattern Genérico:** Abstrai o acesso a dados, permitindo a troca da fonte de dados (ex: de EF Core para Dapper) sem impactar a lógica de negócio.
+* **Middleware de Tratamento Global de Erros:** Um middleware centralizado captura todas as exceções não tratadas, formatando uma resposta de erro (`ProblemDetails`) padronizada para a API.
+* **Validação (FluentValidation):** Validação declarativa e robusta dos DTOs de entrada, mantendo os controllers limpos.
+* **Injeção de Dependência (DI):** Totalmente configurada nativamente pelo .NET para desacoplar todos os componentes.
+* **Programação Assíncrona (Async/Await):** Uso extensivo de `async/await` desde os controllers até o banco de dados para garantir performance e escalabilidade.
 
-## 📂 Arquitetura do Projeto
+---
 
-A solução é dividida nas seguintes camadas:
+## 📂 Estrutura da Solução (Clean Architecture)
 
-* **`Catalogo.Core` (Domínio):** Contém as entidades de negócio (ex: `Produto`, `Categoria`) e as interfaces de contrato (ex: `IRepository`, `IHybridCacheService`). Não depende de nenhuma outra camada.
-* **`Catalogo.Application` (Aplicação):** Contém a lógica de negócio (Services), DTOs, Mapeamentos (AutoMapper) e constantes. Orquestra as operações.
-* **`Catalogo.Infrastructure` (Infraestrutura):** Implementa os contratos da Core. É responsável pela persistência de dados (EF Core, Repositórios) e serviços externos (como o Cache).
-* **`CatalogoProdutos.API` (Apresentação):** Expõe a lógica da camada de Aplicação como endpoints REST (Controllers).
+A estrutura do projeto reflete a separação de responsabilidades:
 
-## 🚀 Como Rodar (Em Breve)
+```
+├── 📁 Catalogo.Core (Domain)
+│   ├── 📁 Entities (Ex: Produto, Categoria)
+│   └── 📁 Interfaces (Ex: IRepository<T>, IProdutoRepository)
+│
+├── 📁 Catalogo.Application (Application)
+│   ├── 📁 DTOs (Ex: ProdutoResponseDTO, CategoriaCreateDTO)
+│   ├── 📁 Interfaces (Ex: IProdutoService, ICacheService)
+│   ├── 📁 Mappings (AutoMapper)
+│   ├── 📁 Services (Lógica de negócio)
+│   └── 📁 Validators (FluentValidation)
+│
+├── 📁 Catalogo.Infrastructure (Infrastructure)
+│   ├── 📁 Data (DbContext, Migrations)
+│   └── 📁 Repositories (Implementações das Interfaces do Core)
+│
+├── 📁 CatalogoProdutos.API (Presentation)
+│   ├── 📁 Controllers (Endpoints da API)
+│   └── 📁 Middleware (Ex: GlobalExceptionMiddleware)
+│
+└── 📄 CatalogoSolucao.sln
+```
 
-*(Seção a ser preenchida com instruções de build, setup do banco de dados e execução do projeto).*
+---
+
+## 💻 Tecnologias Utilizadas
+
+* **.NET 8**
+* **ASP.NET Core 8** (para a API REST)
+* **Entity Framework Core 8** (ORM para persistência de dados)
+* **SQLite** (Banco de dados local)
+* **Redis** (Cache Distribuído)
+* **AutoMapper** (Mapeamento de DTOs)
+* **FluentValidation** (Validação de DTOs)
+* **Swagger/OpenAPI** (Documentação da API)
+
+---
+
+## 🚀 Como Executar o Projeto
+
+### Pré-requisitos
+
+* [.NET 8 SDK](https://dotnet.microsoft.com/pt-br/download/dotnet/8.0)
+* Um servidor [Redis](https://redis.io/docs/getting-started/installation/) (ou [Redis rodando via Docker](https://hub.docker.com/_/redis))
+
+### 1. Clone o Repositório
+
+```bash
+git clone [https://github.com/juniorjuarez/CatalogoProdutosApi.git](https://github.com/juniorjuarez/CatalogoProdutosApi.git)
+cd CatalogoProdutosApi
+```
+
+### 2. Configure as Conexões
+
+Abra o arquivo `CatalogoProdutos.API/appsettings.Development.json` e configure as connection strings do seu banco de dados e do Redis:
+
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "Data Source=catalogo.db", // (Já configurado para SQLite)
+  "Redis": "localhost:6379" // (Confirme se seu Redis está nesta porta)
+}
+```
+
+### 3. Restaure Dependências e Rode as Migrations
+
+```bash
+# Restaura os pacotes NuGet
+dotnet restore
+
+# Navega para o projeto de API (onde o appsettings está)
+cd CatalogoProdutos.API
+
+# Aplica as migrations (cria o banco de dados)
+# (O --project aponta para onde o DbContext está)
+dotnet ef database update --project ../Catalogo.Infrastructure
+```
+
+### 4. Execute a Aplicação
+
+```bash
+# Ainda dentro da pasta CatalogoProdutos.API
+dotnet run
+```
+
+Acesse a documentação do Swagger e teste os endpoints em: `http://localhost:5000/swagger` (ou a porta indicada no terminal).
+
+---
+
+## 🗺️ Endpoints da API (Swagger)
+
+A documentação completa pode ser acessada via Swagger (`/swagger`) quando a aplicação está em execução.
+
+#### Endpoints de Categoria
+
+| Verbo | Rota | Descrição |
+| :--- | :--- | :--- |
+| `GET` | `/api/v1/Categoria` | Lista todas as categorias. |
+| `GET` | `/api/v1/Categoria/{id}` | Busca uma categoria por ID. |
+| `GET` | `/api/v1/Categoria/produtos` | Lista todas as categorias com seus produtos. |
+| `POST` | `/api/v1/Categoria` | Cria uma nova categoria. |
+| `PUT` | `/api/v1/Categoria/{id}` | Atualiza uma categoria existente. |
+| `DELETE` | `/api/v1/Categoria/{id}` | Deleta uma categoria. |
+
+#### Endpoints de Produto
+
+| Verbo | Rota | Descrição |
+| :--- | :--- | :--- |
+| `GET` | `/api/v1/Produtos` | Lista todos os produtos. |
+| `GET` | `/api/v1/Produtos/{id}` | Busca um produto por ID. |
+| `POST` | `/api/v1/Produtos` | Cria um novo produto. |
+| `PUT` | `/api/v1/Produtos/{id}` | Atualiza um produto existente. |
+| `DELETE` | `/api/v1/Produtos/{id}` | Deleta um produto. |
+
+---
 
 ## 🛣️ Roadmap (Próximos Passos)
 
-O projeto ainda está em desenvolvimento. As próximas features planejadas são:
-
-* [ ] Implementação da lógica de **Movimentação de Estoque** (entrada, saída, ajuste).
-* [ ] Implementação do cadastro de **Kits** (conjunto de produtos).
-* [ ] Adição de **Paginação** nos endpoints de listagem.
-* [ ] Implementação de **Validação** de DTOs (FluentValidation).
-* [ ] Criação de um **Middleware Global de Exceções**.
-* [ ] Implementação do padrão **Unit of Work** para transações atômicas.
-* [ ] Adição de **Autenticação e Autorização** (JWT).
+* [ ] Implementar **Autenticação e Autorização** (JWT).
+* [ ] Implementar **Paginação** nos endpoints de listagem (`GET`).
+* [ ] Adicionar **Testes Unitários** (xUnit/NUnit).
+* [ ] Implementar o pattern **Unit of Work** para transações atômicas.
