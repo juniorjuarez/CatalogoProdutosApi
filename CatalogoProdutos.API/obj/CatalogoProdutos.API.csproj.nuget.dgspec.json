@@ -1,39 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\CatalogoProdutos.API\\CatalogoProdutos.API.csproj": {}
+    "/workspaces/CatalogoProdutosApi/CatalogoProdutos.API/CatalogoProdutos.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Catalogo.Application.csproj": {
+    "/workspaces/CatalogoProdutosApi/Catalogo.Application/Catalogo.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Catalogo.Application.csproj",
+        "projectUniqueName": "/workspaces/CatalogoProdutosApi/Catalogo.Application/Catalogo.Application.csproj",
         "projectName": "Catalogo.Application",
-        "projectPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Catalogo.Application.csproj",
-        "packagesPath": "C:\\Users\\junio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\obj\\",
+        "projectPath": "/workspaces/CatalogoProdutosApi/Catalogo.Application/Catalogo.Application.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/CatalogoProdutosApi/Catalogo.Application/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\junio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Catalogo.Core.csproj": {
-                "projectPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Catalogo.Core.csproj"
+              "/workspaces/CatalogoProdutosApi/Catalogo.Core/Catalogo.Core.csproj": {
+                "projectPath": "/workspaces/CatalogoProdutosApi/Catalogo.Core/Catalogo.Core.csproj"
               }
             }
           }
@@ -47,8 +41,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -87,32 +80,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Catalogo.Core.csproj": {
+    "/workspaces/CatalogoProdutosApi/Catalogo.Core/Catalogo.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Catalogo.Core.csproj",
+        "projectUniqueName": "/workspaces/CatalogoProdutosApi/Catalogo.Core/Catalogo.Core.csproj",
         "projectName": "Catalogo.Core",
-        "projectPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Catalogo.Core.csproj",
-        "packagesPath": "C:\\Users\\junio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\obj\\",
+        "projectPath": "/workspaces/CatalogoProdutosApi/Catalogo.Core/Catalogo.Core.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/CatalogoProdutosApi/Catalogo.Core/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\junio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -130,8 +117,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -152,40 +138,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj": {
+    "/workspaces/CatalogoProdutosApi/Catalogo.Infrastructure/Catalogo.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj",
+        "projectUniqueName": "/workspaces/CatalogoProdutosApi/Catalogo.Infrastructure/Catalogo.Infrastructure.csproj",
         "projectName": "Catalogo.Infrastructure",
-        "projectPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\junio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Infrastructure\\obj\\",
+        "projectPath": "/workspaces/CatalogoProdutosApi/Catalogo.Infrastructure/Catalogo.Infrastructure.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/CatalogoProdutosApi/Catalogo.Infrastructure/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\junio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Catalogo.Core.csproj": {
-                "projectPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Core\\Catalogo.Core.csproj"
+              "/workspaces/CatalogoProdutosApi/Catalogo.Core/Catalogo.Core.csproj": {
+                "projectPath": "/workspaces/CatalogoProdutosApi/Catalogo.Core/Catalogo.Core.csproj"
               }
             }
           }
@@ -199,8 +179,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -243,43 +222,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\CatalogoProdutos.API\\CatalogoProdutos.API.csproj": {
+    "/workspaces/CatalogoProdutosApi/CatalogoProdutos.API/CatalogoProdutos.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\CatalogoProdutos.API\\CatalogoProdutos.API.csproj",
+        "projectUniqueName": "/workspaces/CatalogoProdutosApi/CatalogoProdutos.API/CatalogoProdutos.API.csproj",
         "projectName": "CatalogoProdutos.API",
-        "projectPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\CatalogoProdutos.API\\CatalogoProdutos.API.csproj",
-        "packagesPath": "C:\\Users\\junio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\CatalogoProdutos.API\\obj\\",
+        "projectPath": "/workspaces/CatalogoProdutosApi/CatalogoProdutos.API/CatalogoProdutos.API.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/CatalogoProdutosApi/CatalogoProdutos.API/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\junio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Catalogo.Application.csproj": {
-                "projectPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Application\\Catalogo.Application.csproj"
+              "/workspaces/CatalogoProdutosApi/Catalogo.Application/Catalogo.Application.csproj": {
+                "projectPath": "/workspaces/CatalogoProdutosApi/Catalogo.Application/Catalogo.Application.csproj"
               },
-              "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\junio\\source\\repos\\CatalogoProduto\\CatalogoProdutosApi\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj"
+              "/workspaces/CatalogoProdutosApi/Catalogo.Infrastructure/Catalogo.Infrastructure.csproj": {
+                "projectPath": "/workspaces/CatalogoProdutosApi/Catalogo.Infrastructure/Catalogo.Infrastructure.csproj"
               }
             }
           }
@@ -293,8 +266,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -340,7 +312,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

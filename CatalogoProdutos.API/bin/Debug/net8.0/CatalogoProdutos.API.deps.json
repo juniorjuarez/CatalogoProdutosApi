@@ -560,7 +560,7 @@
         },
         "runtime": {
           "Catalogo.Application.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -568,7 +568,7 @@
       "Catalogo.Core/1.0.0": {
         "runtime": {
           "Catalogo.Core.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -581,7 +581,7 @@
         },
         "runtime": {
           "Catalogo.Infrastructure.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }

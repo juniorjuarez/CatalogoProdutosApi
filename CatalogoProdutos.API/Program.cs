@@ -45,16 +45,17 @@ builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
 builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 builder.Services.AddScoped<IProdutoService, ProdutoService>();
-
-//builder.Services.AddMemoryCache();
-builder.Services.AddDistributedMemoryCache();
 builder.Services.AddScoped<IHybridCacheService, HybridCacheService>();
+
+builder.Services.AddMemoryCache();
+builder.Services.AddDistributedMemoryCache();
+
 
 builder.Services.AddStackExchangeRedisCache(options =>
 {
-    // A string de conexão mais segura para usar o Redis do Docker
+    // A string de conexï¿½o mais segura para usar o Redis do Docker
     options.Configuration = "localhost:6379";
-    // Você pode usar um prefixo para as chaves no Redis (opcional)
+    // Vocï¿½ pode usar um prefixo para as chaves no Redis (opcional)
     options.InstanceName = "CatalogoAPI_";
 });
 
