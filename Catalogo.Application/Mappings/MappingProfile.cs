@@ -15,15 +15,10 @@ namespace Catalogo.Application.Mappings
         {
             CreateMap<Produto, ProdutoResponseDTO>();
             CreateMap<Categoria, CategoriaResponseDTO>();
-            CreateMap<Fornecedor, FornecedorResponseDTO>();
-
             CreateMap<Categoria, CategoriaResponseProdutosDTO>();
-            CreateMap<Fornecedor, FornecedorResponseProdutoDTO>();
 
             CreateMap<ProdutoCreateDTO, Produto>();
             CreateMap<CategoriaCreateDTO, Categoria>();
-            CreateMap<FornecedorCreateDTO, Fornecedor>();
-
 
         }
 

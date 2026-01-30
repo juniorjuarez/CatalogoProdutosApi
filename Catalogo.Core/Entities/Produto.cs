@@ -24,15 +24,8 @@ public class Produto
     public string? ImagemUrl { get; set; }
     public float Estoque { get; set; }
     public DateTime DataCadastro { get; set; }
-    
     public int CategoriaId { get; set; }
-    
     [JsonIgnore]
     public Categoria? Categoria { get; set; }
-
-    public int? FornecedorId { get; set; }
-
-    [JsonIgnore]
-    public Fornecedor? Fornecedor { get; set; }
 }
 

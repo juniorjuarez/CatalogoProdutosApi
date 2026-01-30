@@ -1,5 +1,5 @@
 using Catalogo.Application.DTOs;
-using Catalogo.Application.Services;
+using Catalogo.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -21,42 +21,30 @@ namespace CatalogoProdutos.API.Controllers
         public async Task<ActionResult<IEnumerable<ProdutoResponseDTO>>> Get()
         {
 
-            try
+
+
+            var produtos = await _service.GetProdutosAsync();
+
+            if (!produtos.Any())
             {
-
-                var produtos = await _service.GetProdutosAsync();
-
-                if (!produtos.Any())
-                {
-                    return NotFound("Nenhum produto encontrado!");
-                }
-                return Ok(produtos);
+                return NotFound("Nenhum produto encontrado!");
             }
-            catch (Exception)
-            {
+            return Ok(produtos);
 
-                return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro ao realizar a requisição");
-            }
         }
         [HttpGet("{id:int}", Name = "ObterProduto")]
         public async Task<ActionResult<ProdutoResponseDTO>> Get(int id)
         {
-            try
+
+            var produto = await _service.GetProdutoByIdAsync(id);
+
+            if (produto == null)
             {
-                var produto = await _service.GetProdutoByIdAsync(id);
-
-                if (produto == null)
-                {
-                    return NotFound("Nenhum produto encontrado!");
-                }
-
-                return Ok(produto);
+                return NotFound("Nenhum produto encontrado!");
             }
-            catch (Exception)
-            {
 
-                return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro ao realizar a requisição");
-            }
+            return Ok(produto);
+
 
         }
 
@@ -64,69 +52,37 @@ namespace CatalogoProdutos.API.Controllers
         public async Task<ActionResult> Post(ProdutoCreateDTO produtoDTO)
         {
 
-            try
-            {
-                if (produtoDTO is null)
-                {
-                    return BadRequest();
-                }
+            var produtoResponseDTO = await _service.CreateProdutoAsync(produtoDTO);
 
-                var produtoResponseDTO = await _service.CreateProdutoAsync(produtoDTO);
+            return new CreatedAtRouteResult("ObterProduto", new { id = produtoResponseDTO.ProdutoId }, produtoResponseDTO);
 
-                return new CreatedAtRouteResult("ObterProduto", new { id = produtoResponseDTO.ProdutoId }, produtoResponseDTO);
-
-            }
-            catch (Exception)
-            {
-
-                return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro ao realizar a requisição");
-            }
         }
 
         [HttpPut("{id:int}")]
         public async Task<ActionResult> Put(int id, ProdutoCreateDTO produtoCreateDTO)
         {
 
-            try
-            {
-                if (produtoCreateDTO is null) return BadRequest("Dados inválidos.");
 
-                var produtoResponseDTO = await _service.UpdateProdutoAsync(id, produtoCreateDTO);
+            var produtoResponseDTO = await _service.UpdateProdutoAsync(id, produtoCreateDTO);
 
 
-                if (produtoResponseDTO == null) return NotFound("Produto não encontrado.");
+            if (produtoResponseDTO == null) return NotFound("Produto não encontrado.");
 
-                return Ok(produtoResponseDTO);
+            return Ok(produtoResponseDTO);
 
-            }
-            catch (Exception)
-            {
-
-                return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro ao realizar a requisição");
-            }
         }
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
 
-
-            try
+            var produto = await _service.DeleteProdutoAsync(id);
+            if (!produto)
             {
-
-
-                var produto = await _service.DeleteProdutoAsync(id);
-                if (!produto)
-                {
-                    return NotFound("Nenhum produto encontrado!");
-                }
-                return Ok();
-
+                return NotFound("Nenhum produto encontrado!");
             }
-            catch (Exception)
-            {
+            return Ok();
 
-                return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um erro ao realizar a requisição");
-            }
+
 
         }
 

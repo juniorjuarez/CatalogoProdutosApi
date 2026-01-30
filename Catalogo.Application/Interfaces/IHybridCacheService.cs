@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Catalogo.Core.Interfaces
+namespace Catalogo.Application.Interfaces
 {
     public interface IHybridCacheService
     {
