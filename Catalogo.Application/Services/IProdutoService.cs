@@ -1,7 +1,7 @@
 using Catalogo.Application.DTOs;
 
 
-namespace Catalogo.Application.Interfaces
+namespace Catalogo.Application.Services
 {
     public interface IProdutoService
     {

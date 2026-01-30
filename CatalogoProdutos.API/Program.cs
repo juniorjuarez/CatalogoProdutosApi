@@ -1,16 +1,10 @@
-using Catalogo.Application.Interfaces;
 using Catalogo.Application.Mappings;
 using Catalogo.Application.Services;
 using Catalogo.Core.Interfaces;
 using Catalogo.Infrastructure.Data.Context;
 using Catalogo.Infrastructure.Repositories;
-using CatalogoProdutos.API.Middleware;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
-using FluentValidation.AspNetCore; // <--- PASSO 1: ADICIONE ESTE USING
-using FluentValidation; // <--- PASSO 1: ADICIONE ESTE USING
-using Catalogo.Application.Validators;
-
 // ...e outros que o EF e o AutoMapper precisam
 
 
@@ -28,10 +22,6 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 });
 
 
-builder.Services.AddFluentValidationAutoValidation();
-builder.Services.AddValidatorsFromAssemblyContaining<ProductCreateDTOValidator>();
-builder.Services.AddValidatorsFromAssemblyContaining<CategoryCreateDTOValidator>();
-
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 // builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionString));
@@ -45,17 +35,16 @@ builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
 builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 builder.Services.AddScoped<IProdutoService, ProdutoService>();
-builder.Services.AddScoped<IHybridCacheService, HybridCacheService>();
 
 builder.Services.AddMemoryCache();
 builder.Services.AddDistributedMemoryCache();
-
+builder.Services.AddScoped<IHybridCacheService, HybridCacheService>();
 
 builder.Services.AddStackExchangeRedisCache(options =>
 {
-    // A string de conexï¿½o mais segura para usar o Redis do Docker
+    // A string de conexão mais segura para usar o Redis do Docker
     options.Configuration = "localhost:6379";
-    // Vocï¿½ pode usar um prefixo para as chaves no Redis (opcional)
+    // Você pode usar um prefixo para as chaves no Redis (opcional)
     options.InstanceName = "CatalogoAPI_";
 });
 
@@ -72,8 +61,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
 app.UseHttpsRedirection();
-app.UseMiddleware<GlobalExceptionMiddleware>();
 app.MapControllers();
 
 app.Run();

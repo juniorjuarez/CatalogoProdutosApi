@@ -1,19 +1,16 @@
 using Catalogo.Application.DTOs;
 using Catalogo.Application.Services;
-using CatalogoProdutos.API.Middleware;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 
 
 namespace CatalogoProdutos.API.Controllers
 {
-    [Route("[controller]")]
+    [Route("controller")]
     [ApiController]
     public class CategoriaController : ControllerBase
     {
         private readonly ICategoriaService _service;
-
-
 
 
         public CategoriaController(ICategoriaService service)
@@ -25,32 +22,45 @@ namespace CatalogoProdutos.API.Controllers
         public async Task<ActionResult<IEnumerable<CategoriaResponseDTO>>> Get()
         {
 
-            var categoriasDTO = await _service.GetCategoriasAsync();
-
-            if (!categoriasDTO.Any())
+            try
             {
-                return NotFound("Nenhuma categoria encontrado!");
+                var categoriasDTO = await _service.GetCategoriasAsync();
+
+                if (!categoriasDTO.Any())
+                {
+                    return NotFound("Nenhuma categoria encontrado!");
+                }
+                return Ok(categoriasDTO);
             }
-            return Ok(categoriasDTO);
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao realizar a solicitação.");
 
-
-
+            }
         }
 
         [HttpGet("{id:int}", Name = "ObterCategoria")]
         public async Task<ActionResult<CategoriaResponseDTO>> Get(int id)
         {
 
-
-            var categoriaDTO = await _service.GetCategoriaByIdAsync(id);
-
-            if (categoriaDTO == null)
+            try
             {
-                return NotFound("Nenhuma categoria encontrado!");
+
+                var categoriaDTO = await _service.GetCategoriaByIdAsync(id);
+
+                if (categoriaDTO == null)
+                {
+                    return NotFound("Nenhuma categoria encontrado!");
+                }
+
+                return Ok(categoriaDTO);
             }
+            catch (Exception)
+            {
 
-            return Ok(categoriaDTO);
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao realizar a solicitação.");
 
+            }
 
         }
 
@@ -58,11 +68,16 @@ namespace CatalogoProdutos.API.Controllers
         public async Task<ActionResult<IEnumerable<CategoriaResponseProdutosDTO>>> GetCategoriasProdutos()
         {
 
+            try
+            {
+                var categoriasProdutosDTO = await _service.GetCategoriasProdutosAsync();
+                return Ok(categoriasProdutosDTO);
 
-            var categoriasProdutosDTO = await _service.GetCategoriasProdutosAsync();
-            return Ok(categoriasProdutosDTO);
-
-
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao realizar a solicitação: {ex}");
+            }
 
         }
 
@@ -70,10 +85,23 @@ namespace CatalogoProdutos.API.Controllers
         public async Task<ActionResult> Post(CategoriaCreateDTO categoriaDTO)
         {
 
+            try
+            {
+                if (categoriaDTO is null)
+                {
+                    return BadRequest();
+                }
 
-            var categoriaResponseDTO = await _service.CreateCategoriaAsync(categoriaDTO);
+                var categoriaResponseDTO = await _service.CreateCategoriaAsync(categoriaDTO);
 
-            return new CreatedAtRouteResult("ObterCategoria", new { id = categoriaResponseDTO.CategoriaId }, categoriaResponseDTO);
+                return new CreatedAtRouteResult("ObterCategoria", new { id = categoriaResponseDTO.CategoriaId }, categoriaResponseDTO);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao realizar a solicitação.");
+
+            }
 
 
         }
@@ -82,24 +110,42 @@ namespace CatalogoProdutos.API.Controllers
         public async Task<ActionResult> Put(int id, CategoriaCreateDTO categoriaDTO)
         {
 
-            var categoria = await _service.UpdateCategoriaAsync(id, categoriaDTO);
+            try
 
-            if (categoria == null) return NotFound("Categoria não encontrada.");
+            {
+                if (categoriaDTO == null) return BadRequest("Dados inválidos.");
 
-            return Ok(categoria);
+                var categoria = await _service.UpdateCategoriaAsync(id, categoriaDTO);
 
+                if (categoria == null) return NotFound("Categoria não encontrada.");
+
+                return Ok(categoria);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao realizar a solicitação.");
+
+            }
         }
 
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
+            try
+            {
 
+                var categoria = await _service.DeleteCategoriaAsync(id);
+                if (!categoria) return NotFound("Nenhuma categoria encontrada!");
 
-            var categoria = await _service.DeleteCategoriaAsync(id);
-            if (!categoria) return NotFound("Nenhuma categoria encontrada!");
+                return Ok();
+            }
+            catch (Exception)
+            {
 
-            return Ok();
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao realizar a solicitação.");
 
+            }
 
         }
     }

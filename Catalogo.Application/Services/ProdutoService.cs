@@ -1,7 +1,6 @@
 using AutoMapper;
 using Catalogo.Application.Constants;
 using Catalogo.Application.DTOs;
-using Catalogo.Application.Interfaces;
 using Catalogo.Core.Entities;
 using Catalogo.Core.Interfaces;
 
@@ -12,11 +11,13 @@ namespace Catalogo.Application.Services
     public class ProdutoService : IProdutoService
     {
 
+
         private readonly IProdutoRepository _repository;
         private readonly IMapper _mapper;
         private readonly IHybridCacheService _cache;
 
-        
+        public TimeSpan cacheExpirationL1 =  CacheKeys.ABSOLUTE_EXPIRATION_L1;
+        public TimeSpan cacheExpirationL2 = CacheKeys.ABSOLUTE_EXPIRATION_L2;
 
         public ProdutoService(IProdutoRepository repository, IMapper mapper, IHybridCacheService cache)
         {
@@ -27,9 +28,13 @@ namespace Catalogo.Application.Services
         }
 
         public async Task<IEnumerable<ProdutoResponseDTO>> GetProdutosAsync()
+
+
+
         {
 
-            string cacheKeyL1 = $"{CacheKeys.PRODUTOS_KEY}";
+
+               string cacheKeyL1 = $"{CacheKeys.PRODUTOS_KEY}";
             string cacheKeyL2 = $"{CacheKeys.PRODUTOS_KEY}";
 
             var produtoDtos = await _cache.GetOrCreateAsync(
@@ -37,7 +42,7 @@ namespace Catalogo.Application.Services
                 cacheKeyL2,
                 factory: async () =>
             {
-                var produtos = await _repository.GetAllAsync();
+                var produtos =  await _repository.GetAllAsync();
 
                 if (produtos == null) return Enumerable.Empty<ProdutoResponseDTO>();
 
@@ -45,8 +50,8 @@ namespace Catalogo.Application.Services
 
             },
 
-                    absoluteExpirationL1: CacheKeys.ABSOLUTE_EXPIRATION_L1,
-                    absoluteExpirationL2: CacheKeys.ABSOLUTE_EXPIRATION_L2
+                cacheExpirationL1,
+                cacheExpirationL2
 
       );
 
@@ -64,8 +69,8 @@ namespace Catalogo.Application.Services
 
             var produtoDto = await _cache.GetOrCreateAsync
                 (
-                    cacheKeyL1,
-                    cacheKeyL2,
+                    cacheKeyL1, 
+                    cacheKeyL2, 
                     factory: async () =>
                         {
                             var produto = await _repository.GetByIdAsync(p => p.ProdutoId == id);
@@ -73,8 +78,8 @@ namespace Catalogo.Application.Services
                             return _mapper.Map<ProdutoResponseDTO>(produto);
 
                         },
-                    absoluteExpirationL1: CacheKeys.ABSOLUTE_EXPIRATION_L1,
-                    absoluteExpirationL2: CacheKeys.ABSOLUTE_EXPIRATION_L2
+                cacheExpirationL1,
+                cacheExpirationL2
                   );
 
             return produtoDto;
@@ -83,13 +88,25 @@ namespace Catalogo.Application.Services
         public async Task<ProdutoResponseDTO> CreateProdutoAsync(ProdutoCreateDTO produtoDTO)
         {
 
+            string cacheKeyL1 = $"{CacheKeys.PRODUTOS_KEY}";
+            string cacheKeyL2 = $"{CacheKeys.PRODUTOS_KEY}";
+
             var produto = _mapper.Map<Produto>(produtoDTO);
             var produtoSalvo = await _repository.CreateAsync(produto);
-            await InvalidateProductCacheAsync();
+            await _cache.RemoveAsync(cacheKeyL1, cacheKeyL2);
             return _mapper.Map<ProdutoResponseDTO>(produtoSalvo);
         }
         public async Task<ProdutoResponseDTO> UpdateProdutoAsync(int id, ProdutoCreateDTO produtoDTO)
         {
+            string cacheKeyL1ProductId = $"{CacheKeys.ProdutoPrefix}{id}";
+            string cacheKeyL2ProductId = $"{CacheKeys.ProdutoPrefix}{id}";
+
+            string cacheKeyL1ProductAll = $"{CacheKeys.PRODUTOS_KEY}";
+            string cacheKeyL2ProductAll = $"{CacheKeys.PRODUTOS_KEY}";
+
+            string cacheKeyL1Category = $"{CacheKeys.CATEGORIAS_PRODUTOS_KEY}";
+            string cacheKeyL2Category = $"{CacheKeys.CATEGORIAS_PRODUTOS_KEY}";
+
 
             var produto = await _repository.GetByIdAsync(p => p.ProdutoId == id);
 
@@ -98,7 +115,9 @@ namespace Catalogo.Application.Services
             _mapper.Map(produtoDTO, produto);
 
             var produtoAtualizado = await _repository.UpdateAsync(produto);
-            await InvalidateProductCacheAsync(id);
+            await _cache.RemoveAsync(cacheKeyL1ProductId, cacheKeyL2ProductId);
+            await _cache.RemoveAsync(cacheKeyL1ProductAll, cacheKeyL2ProductAll);
+            await _cache.RemoveAsync(cacheKeyL1Category, cacheKeyL2Category);
 
 
             return _mapper.Map<ProdutoResponseDTO>(produtoAtualizado);
@@ -107,6 +126,14 @@ namespace Catalogo.Application.Services
 
         public async Task<bool> DeleteProdutoAsync(int id)
         {
+            string cacheKeyL1ProductId = $"{CacheKeys.ProdutoPrefix}{id}";
+            string cacheKeyL2ProductId = $"{CacheKeys.ProdutoPrefix}{id}";
+
+            string cacheKeyL1ProductAll = $"{CacheKeys.PRODUTOS_KEY}";
+            string cacheKeyL2ProductAll = $"{CacheKeys.PRODUTOS_KEY}";
+
+            string cacheKeyL1Category = $"{CacheKeys.CATEGORIAS_PRODUTOS_KEY}";
+            string cacheKeyL2Category = $"{CacheKeys.CATEGORIAS_PRODUTOS_KEY}";
 
             var produto = await _repository.GetByIdAsync(p => p.ProdutoId == id);
             if (produto == null) return false;
@@ -114,23 +141,11 @@ namespace Catalogo.Application.Services
 
             await _repository.DeleteAsync(produto);
 
-            await InvalidateProductCacheAsync(id);
+            await _cache.RemoveAsync(cacheKeyL1ProductId, cacheKeyL2ProductId);
+            await _cache.RemoveAsync(cacheKeyL1ProductAll, cacheKeyL2ProductAll);
+            await _cache.RemoveAsync(cacheKeyL1Category, cacheKeyL2Category);
 
             return true;
-        }
-        private async Task InvalidateProductCacheAsync(int? id = null)
-        {
-            await _cache.RemoveAsync(CacheKeys.PRODUTOS_KEY, CacheKeys.PRODUTOS_KEY);
-
-            await _cache.RemoveAsync(CacheKeys.CATEGORIAS_PRODUTOS_KEY, CacheKeys.CATEGORIAS_PRODUTOS_KEY);
-
-            if (id.HasValue)
-            {
-                string cacheKeyL1 = $"{CacheKeys.ProdutoPrefix}{id}";
-                string cacheKeyL2 = $"{CacheKeys.ProdutoPrefix}{id}";
-
-                await _cache.RemoveAsync(cacheKeyL1, cacheKeyL2);
-            }
         }
     }
 }

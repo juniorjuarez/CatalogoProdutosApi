@@ -2,15 +2,11 @@ using AutoMapper;
 using Catalogo.Application.Constants;
 using Catalogo.Application.DTOs;
 using Catalogo.Core.Entities;
-using Catalogo.Application.Interfaces;
 using Catalogo.Core.Interfaces;
 
 
 namespace Catalogo.Application.Services
 {
-
-
-
     public class CategoriaService : ICategoriaService
     {
 
@@ -18,6 +14,8 @@ namespace Catalogo.Application.Services
         private readonly IMapper _mapper;
         private readonly IHybridCacheService _cache;
 
+        public TimeSpan cacheExpirationL1 = CacheKeys.ABSOLUTE_EXPIRATION_L1;
+        public TimeSpan cacheExpirationL2 = CacheKeys.ABSOLUTE_EXPIRATION_L2;
 
         public CategoriaService(ICategoriaRepository repository, IMapper mapper, IHybridCacheService cache)
         {
@@ -46,8 +44,8 @@ namespace Catalogo.Application.Services
                     return _mapper.Map<IEnumerable<CategoriaResponseDTO>>(categorias);
 
                 },
-                absoluteExpirationL1: CacheKeys.ABSOLUTE_EXPIRATION_L1,
-                absoluteExpirationL2: CacheKeys.ABSOLUTE_EXPIRATION_L2
+                cacheExpirationL1,
+                cacheExpirationL2
              );
 
 
@@ -73,8 +71,8 @@ namespace Catalogo.Application.Services
                             return _mapper.Map<CategoriaResponseDTO>(categorias);
 
                         },
-                absoluteExpirationL1: CacheKeys.ABSOLUTE_EXPIRATION_L1,
-                absoluteExpirationL2: CacheKeys.ABSOLUTE_EXPIRATION_L2
+                cacheExpirationL1,
+                cacheExpirationL2
                    );
 
             return categoriasDto;
@@ -99,8 +97,8 @@ namespace Catalogo.Application.Services
                         return _mapper.Map<IEnumerable<CategoriaResponseProdutosDTO>>(categoriasProdutos);
                     },
 
-                    absoluteExpirationL1: CacheKeys.ABSOLUTE_EXPIRATION_L1,
-                    absoluteExpirationL2: CacheKeys.ABSOLUTE_EXPIRATION_L2
+                    absoluteExpirationL1: TimeSpan.FromMinutes(5),
+                    absoluteExpirationL2: TimeSpan.FromMinutes(30)
                 );
 
             return categoriasProdutoDto;
@@ -109,15 +107,35 @@ namespace Catalogo.Application.Services
 
         public async Task<CategoriaResponseDTO> CreateCategoriaAsync(CategoriaCreateDTO categoriaDto)
         {
+
+
+            string cacheKeyCategoriasAllL1 = $"{CacheKeys.CATEGORIAS_KEY}";
+            string cacheKeyCategoriasAllL2 = $"{CacheKeys.CATEGORIAS_KEY}";
+
+            string cacheKeyL1Category = $"{CacheKeys.CATEGORIAS_PRODUTOS_KEY}";
+            string cacheKeyL2Category = $"{CacheKeys.CATEGORIAS_PRODUTOS_KEY}";
+
+
+
             var categoria = _mapper.Map<Categoria>(categoriaDto);
 
             var categoriaSalva = await _repository.CreateAsync(categoria);
-            await InvalidateCategoryCacheAsync();
+            await _cache.RemoveAsync(cacheKeyCategoriasAllL1, cacheKeyCategoriasAllL2);
+            await _cache.RemoveAsync(cacheKeyL1Category, cacheKeyL2Category);
 
             return _mapper.Map<CategoriaResponseDTO>(categoriaSalva);
         }
         public async Task<CategoriaResponseDTO> UpdateCategoriaAsync(int id, CategoriaCreateDTO categoriaDto)
         {
+
+
+            string cacheKeyL1 = $"{CacheKeys.CategoriaPrefix}{id}";
+            string cacheKeyL2 = $"{CacheKeys.CategoriaPrefix}{id}";
+            string cacheKeyCategoriasAllL1 = $"{CacheKeys.CATEGORIAS_KEY}";
+            string cacheKeyCategoriasAllL2 = $"{CacheKeys.CATEGORIAS_KEY}";
+
+            string cacheKeyL1Category = $"{CacheKeys.CATEGORIAS_PRODUTOS_KEY}";
+            string cacheKeyL2Category = $"{CacheKeys.CATEGORIAS_PRODUTOS_KEY}";
 
             var categoria = await _repository.GetByIdAsync(c => c.CategoriaId == id);
 
@@ -127,14 +145,22 @@ namespace Catalogo.Application.Services
 
 
             var catgoriaAtualizada = await _repository.UpdateAsync(categoria);
-            await InvalidateCategoryCacheAsync(id);
+            await _cache.RemoveAsync(cacheKeyL1, cacheKeyL2);
+            await _cache.RemoveAsync(cacheKeyCategoriasAllL1, cacheKeyCategoriasAllL2);
+            await _cache.RemoveAsync(cacheKeyL1Category, cacheKeyL2Category);
 
             return _mapper.Map<CategoriaResponseDTO>(catgoriaAtualizada);
 
         }
         public async Task<bool> DeleteCategoriaAsync(int id)
         {
+            string cacheKeyL1 = $"{CacheKeys.CategoriaPrefix}{id}";
+            string cacheKeyL2 = $"{CacheKeys.CategoriaPrefix}{id}";
+            string cacheKeyCategoriasAllL1 = $"{CacheKeys.CATEGORIAS_KEY}";
+            string cacheKeyCategoriasAllL2 = $"{CacheKeys.CATEGORIAS_KEY}";
 
+            string cacheKeyL1Category = $"{CacheKeys.CATEGORIAS_PRODUTOS_KEY}";
+            string cacheKeyL2Category = $"{CacheKeys.CATEGORIAS_PRODUTOS_KEY}";
             var categoria = await _repository.GetByIdAsync(c => c.CategoriaId == id);
 
             if (categoria == null)
@@ -143,23 +169,12 @@ namespace Catalogo.Application.Services
             }
 
             await _repository.DeleteAsync(categoria);
-            await InvalidateCategoryCacheAsync(id);
+            await _cache.RemoveAsync(cacheKeyL1, cacheKeyL2);
+            await _cache.RemoveAsync(cacheKeyCategoriasAllL1, cacheKeyCategoriasAllL2);
+            await _cache.RemoveAsync(cacheKeyL1Category, cacheKeyL2Category);
             return true;
         }
-        private async Task InvalidateCategoryCacheAsync(int? id = null)
-        {
-            await _cache.RemoveAsync(CacheKeys.CATEGORIAS_KEY, CacheKeys.CATEGORIAS_KEY);
 
-            await _cache.RemoveAsync(CacheKeys.CATEGORIAS_PRODUTOS_KEY, CacheKeys.CATEGORIAS_PRODUTOS_KEY);
-
-            if (id.HasValue)
-            {
-                string cacheKeyL1 = $"{CacheKeys.CategoriaPrefix}{id}";
-                string cacheKeyL2 = $"{CacheKeys.CategoriaPrefix}{id}";
-
-                await _cache.RemoveAsync(cacheKeyL1, cacheKeyL2);
-            }
-        }
 
     }
 }
