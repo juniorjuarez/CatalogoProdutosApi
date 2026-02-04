@@ -10,5 +10,6 @@ namespace Catalogo.Application.DTOs
         public string? Descricao { get; set; }
         public string? ImagemUrl { get; set; }
         public int CategoriaId { get; set; }
+        public int? FornecedorId { get; set; }
     }
 }

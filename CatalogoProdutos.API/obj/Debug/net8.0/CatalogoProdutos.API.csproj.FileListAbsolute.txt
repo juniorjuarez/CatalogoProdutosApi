@@ -1005,10 +1005,6 @@ C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratt
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
-C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll
@@ -1060,11 +1056,6 @@ C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratt
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\CatalogoProdutos.API.sourcelink.json
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\staticwebassets\msbuild.CatalogoProdutos.API.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\staticwebassets\msbuild.build.CatalogoProdutos.API.props
-C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CatalogoProdutos.API.props
-C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CatalogoProdutos.API.props
-C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\scopedcss\bundle\CatalogoProdutos.API.styles.css
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\Catalogo.B4AED9FC.Up2Date
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\CatalogoProdutos.API.dll
@@ -1072,3 +1063,14 @@ C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratt
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\CatalogoProdutos.API.pdb
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\CatalogoProdutos.API.genruntimeconfig.cache
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\ref\CatalogoProdutos.API.dll
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\bin\Debug\net8.0\CatalogoProdutos.API.staticwebassets.endpoints.json
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\CatalogoProdutos.API\obj\Debug\net8.0\swae.build.ex.cache

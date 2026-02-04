@@ -1,10 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using Catalogo.Application.Constants;
 using Catalogo.Application.DTOs;
+using Catalogo.Application.Interfaces;
 using Catalogo.Core.Entities;
 using Catalogo.Core.Interfaces;
 
@@ -56,37 +53,37 @@ namespace Catalogo.Application.Services
             return fornecedoresDtos ?? Enumerable.Empty<FornecedorResponseDTO>();
         }
 
-        public async Task<FornecedorResponseDTO> GetFornecedorByIdAsync(int id)
+        public async Task<FornecedorResponseDTO?> GetFornecedorByIdAsync(int id)
         {
-            string cacheKeyL1 = $"{CacheKeys.Fornecedores_Key}";
-            string cacheKeyL2 = $"{CacheKeys.Fornecedores_Key}";
+            string cacheKeyL1 = $"{CacheKeys.FornecedorPrefix}{id}";
+            string cacheKeyL2 = $"{CacheKeys.FornecedorPrefix}{id}";
 
-            var fornecedoresDto = await _cache.GetOrCreateAsync
+            var fornecedorDto = await _cache.GetOrCreateAsync
             (
                 cacheKeyL1,
                 cacheKeyL2,
                 factory: async () =>
                 {
-                    var fornecedores = await _repository.GetByIdAsync(f => f.FornecedorId == id);
-                    if (fornecedores == null) return null;
-                    return _mapper.Map<FornecedorResponseDTO>(fornecedores);
+                    var fornecedor = await _repository.GetByIdAsync(f => f.FornecedorId == id);
+                    if (fornecedor == null) return null;
+                    return _mapper.Map<FornecedorResponseDTO>(fornecedor);
                 },
                 cacheExpirationL1,
                 cacheExpirationL2
             );
 
-            return fornecedoresDto;
+            return fornecedorDto;
         }
 
         public async Task<IEnumerable<FornecedorResponseProdutoDTO>> GetFornecedorResponseProdutosAsync()
         {
-            string cacheKeyL1 = $"{CacheKeys.Fornecedores_Key}";
-            string cacheKeyL2 = $"{CacheKeys.Fornecedores_Key}";
+            string cacheKeyL1 = $"{CacheKeys.FORNECEDORES_PRODUTOS_KEY}";
+            string cacheKeyL2 = $"{CacheKeys.FORNECEDORES_PRODUTOS_KEY}";
 
             var fornecedoresDto = await _cache.GetOrCreateAsync
             (
                 cacheKeyL1,
-                cacheKeyL1,
+                cacheKeyL2,
                 factory: async () =>
                 {
                     var fornecedoresProdutos = await _repository.GetFornecedoresProdutosAsync();
@@ -115,10 +112,10 @@ namespace Catalogo.Application.Services
             return _mapper.Map<FornecedorResponseDTO>(fornecedorSalvo);
         }
 
-        public async Task<FornecedorCreateDTO> UpdateFornecedorAsync(int id, FornecedorCreateDTO fornecedorDto)
+        public async Task<FornecedorResponseDTO?> UpdateFornecedorAsync(int id, FornecedorCreateDTO fornecedorDto)
         {
-            string cacheKeyl1 = $"`{CacheKeys.FornecedorPrefix}{id}";
-            string cacheKeyl2 = $"`{CacheKeys.FornecedorPrefix}{id}";
+            string cacheKeyl1 = $"{CacheKeys.FornecedorPrefix}{id}";
+            string cacheKeyl2 = $"{CacheKeys.FornecedorPrefix}{id}";
 
             string cacheKeyFornecedoresAllL1 = $"{CacheKeys.Fornecedores_Key}";
             string cacheKeyFornecedoresAllL2 = $"{CacheKeys.Fornecedores_Key}";
@@ -138,13 +135,13 @@ namespace Catalogo.Application.Services
             await _cache.RemoveAsync(cacheKeyL1Fornecedor, cacheKeyL2Fornecedor);
             await _cache.RemoveAsync(cacheKeyl1, cacheKeyl2);
 
-            return _mapper.Map<FornecedorCreateDTO>(fornecedorAtualizado);
+            return _mapper.Map<FornecedorResponseDTO>(fornecedorAtualizado);
         }
 
         public async Task<bool> DeleteFornecedorAsync(int id)
         {
-            string cacheKeyl1 = $"`{CacheKeys.FornecedorPrefix}{id}";
-            string cacheKeyl2 = $"`{CacheKeys.FornecedorPrefix}{id}";
+            string cacheKeyl1 = $"{CacheKeys.FornecedorPrefix}{id}";
+            string cacheKeyl2 = $"{CacheKeys.FornecedorPrefix}{id}";
 
             string cacheKeyFornecedoresAllL1 = $"{CacheKeys.Fornecedores_Key}";
             string cacheKeyFornecedoresAllL2 = $"{CacheKeys.Fornecedores_Key}";

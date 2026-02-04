@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using Catalogo.Application.DTOs;
 using Catalogo.Application.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
 namespace CatalogoProdutos.API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class FornecedorController : Controller
+    public class FornecedorController : ControllerBase
     {
         private readonly IFornecedorService _service;
 
@@ -81,7 +82,7 @@ namespace CatalogoProdutos.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<FornecedorCreateDTO>> Post(FornecedorCreateDTO fornecedorDto)
+        public async Task<ActionResult<FornecedorResponseDTO>> Post(FornecedorCreateDTO fornecedorDto)
         {
             try
             {
@@ -101,7 +102,7 @@ namespace CatalogoProdutos.API.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> Put(int id, FornecedorCreateDTO fornecedorDto)
+        public async Task<ActionResult<FornecedorResponseDTO>> Put(int id, FornecedorCreateDTO fornecedorDto)
         {
             try
             {

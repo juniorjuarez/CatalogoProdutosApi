@@ -11,5 +11,6 @@ namespace Catalogo.Application.DTOs
         public decimal Preco { get; set; }
         public float Estoque { get; set; }
         public int CategoriaId { get; set; }
+        public int? FornecedorId { get; set; }
     }
 }

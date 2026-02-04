@@ -27,5 +27,8 @@ public class Produto
     public int CategoriaId { get; set; }
     [JsonIgnore]
     public Categoria? Categoria { get; set; }
+    public int? FornecedorId { get; set; }
+    [JsonIgnore]
+    public Fornecedor? Fornecedor { get; set; }
 }
 

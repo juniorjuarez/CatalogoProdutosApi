@@ -1,0 +1,19 @@
+services:
+  api:
+    build: .
+    container_name: catalogo-api
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Data Source=data/catalogo.db
+    depends_on:
+      - redis
+    volumes:
+      - ./data:/app/data # Persistência do banco SQLite
+
+  redis:
+    image: redis:alpine
+    container_name: redis-cache
+    ports:
+      - "6379:6379"

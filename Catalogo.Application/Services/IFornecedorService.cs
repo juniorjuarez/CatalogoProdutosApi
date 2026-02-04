@@ -14,7 +14,7 @@ namespace Catalogo.Application.Services
 
         Task<FornecedorResponseDTO> CreateFornecedorAsync(FornecedorCreateDTO fornecedorDto);
 
-        Task<FornecedorCreateDTO> UpdateFornecedorAsync(int id, FornecedorCreateDTO fornecedorDto);
+        Task<FornecedorResponseDTO?> UpdateFornecedorAsync(int id, FornecedorCreateDTO fornecedorDto);
 
         Task<bool> DeleteFornecedorAsync(int id);
 
