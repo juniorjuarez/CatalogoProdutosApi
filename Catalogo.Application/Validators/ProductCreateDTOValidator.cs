@@ -8,7 +8,7 @@ namespace Catalogo.Application.Validators
     {
         public ProductCreateDTOValidator()
         {
-            RuleFor(p => p.Nome).NotEmpty().WithMessage("O nome do produto é obrigatório.").Length(3, 10).WithMessage("O nome deve ter entre 3 e 100 caracteres.");
+            RuleFor(p => p.Nome).NotEmpty().WithMessage("O nome do produto é obrigatório.").Length(3, 100).WithMessage("O nome deve ter entre 3 e 100 caracteres.");
 
             RuleFor(p => p.Preco).GreaterThan(0).WithMessage("O preço deve ser maior que zero.");
 
