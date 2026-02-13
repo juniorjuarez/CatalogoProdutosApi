@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OF4lFJhUdnA=",
+  "dgSpecHash": "GsncTXHTjSs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj",
+  "projectFilePath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jose.santos\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\jose.santos\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

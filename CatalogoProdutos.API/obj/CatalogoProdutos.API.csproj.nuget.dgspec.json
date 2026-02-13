@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\CatalogoProdutos.API\\CatalogoProdutos.API.csproj": {}
+    "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\CatalogoProdutos.API\\CatalogoProdutos.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj": {
+    "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj",
+        "projectUniqueName": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj",
         "projectName": "Catalogo.Application",
-        "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj",
+        "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj",
         "packagesPath": "C:\\Users\\jose.santos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Application\\obj\\",
+        "outputPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj": {
-                "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj"
+              "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj": {
+                "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj"
               }
             }
           }
@@ -92,14 +92,14 @@
         }
       }
     },
-    "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj": {
+    "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj",
+        "projectUniqueName": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj",
         "projectName": "Catalogo.Core",
-        "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj",
+        "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj",
         "packagesPath": "C:\\Users\\jose.santos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\obj\\",
+        "outputPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -158,14 +158,14 @@
         }
       }
     },
-    "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj": {
+    "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj",
         "projectName": "Catalogo.Infrastructure",
-        "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\jose.santos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -187,8 +187,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj": {
-                "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj"
+              "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj": {
+                "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj"
               }
             }
           }
@@ -250,14 +250,14 @@
         }
       }
     },
-    "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\CatalogoProdutos.API\\CatalogoProdutos.API.csproj": {
+    "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\CatalogoProdutos.API\\CatalogoProdutos.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\CatalogoProdutos.API\\CatalogoProdutos.API.csproj",
+        "projectUniqueName": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\CatalogoProdutos.API\\CatalogoProdutos.API.csproj",
         "projectName": "CatalogoProdutos.API",
-        "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\CatalogoProdutos.API\\CatalogoProdutos.API.csproj",
+        "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\CatalogoProdutos.API\\CatalogoProdutos.API.csproj",
         "packagesPath": "C:\\Users\\jose.santos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\CatalogoProdutos.API\\obj\\",
+        "outputPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\CatalogoProdutos.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -279,11 +279,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj": {
-                "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj"
+              "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj": {
+                "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Application\\Catalogo.Application.csproj"
               },
-              "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj"
+              "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj"
               }
             }
           }

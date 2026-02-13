@@ -14,6 +14,62 @@
             "problemMatcher": "$msCompile"
         },
         {
+            "label": "run",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "run",
+                "--project",
+                "${workspaceFolder}/CatalogoProdutos.API/CatalogoProdutos.API.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "${workspaceFolder}/CatalogoProdutos.API/CatalogoProdutos.API.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "test",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/CatalogoSolucao.sln",
+                "--no-build"
+            ],
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "clean",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "clean",
+                "${workspaceFolder}/CatalogoSolucao.sln"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
             "label": "publish",
             "command": "dotnet",
             "type": "process",
@@ -26,16 +82,35 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "watch",
-            "command": "dotnet",
-            "type": "process",
+            "label": "Gerar mensagem de commit (pt-BR)",
+            "type": "shell",
+            "command": "powershell",
             "args": [
-                "watch",
-                "run",
-                "--project",
-                "${workspaceFolder}/CatalogoSolucao.sln"
+                "-NoProfile",
+                "-File",
+                "${workspaceFolder}/scripts/gerar-commit-ptbr.ps1"
             ],
-            "problemMatcher": "$msCompile"
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Gerar mensagem de commit detalhada (pt-BR)",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile",
+                "-File",
+                "${workspaceFolder}/scripts/gerar-commit-ptbr.ps1",
+                "-Detalhado"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
         }
     ]
 }

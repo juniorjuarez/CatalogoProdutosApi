@@ -1,0 +1,60 @@
+---
+name: commit-pt-br
+description: Regra para mensagens de commit em português do Brasil (pt-BR) com Conventional Commits
+---
+
+# Commits em pt-BR (Conventional Commits)
+
+## Regra obrigatória
+
+Todas as mensagens de commit neste projeto devem ser:
+
+1. **Em português do Brasil (pt-BR).**
+2. **No padrão Conventional Commits:** tipo opcional(escopo): descrição.
+
+## Formato
+
+```
+<tipo>(<escopo opcional>): <descrição em pt-BR>
+```
+
+## Tipos principais
+
+| Tipo     | Uso |
+|----------|-----|
+| `feat`   | Nova funcionalidade |
+| `fix`    | Correção de bug |
+| `docs`   | Apenas documentação |
+| `style`  | Formatação, ponto e vírgula, etc. (não altera lógica) |
+| `refactor` | Refatoração (nem feat nem fix) |
+| `test`   | Adição ou ajuste de testes |
+| `chore`  | Tarefas de build, config, dependências |
+
+## Exemplos (pt-BR)
+
+- `feat(api): adiciona endpoint de listagem de categorias`
+- `fix(validacao): corrige regra de tamanho do nome do produto`
+- `docs(readme): atualiza instruções de execução`
+- `test(service): adiciona testes unitários para CategoriaService com Moq`
+- `chore(deps): adiciona pacote Moq ao projeto de testes`
+- `refactor(controller): extrai lógica de validação para o service`
+
+## Boas práticas
+
+- Descrição no **imperativo** (ex.: "adiciona", "corrige", "atualiza").
+- Sem ponto final na descrição.
+- Escopo opcional: módulo/área afetada (ex.: `api`, `validacao`, `test`).
+
+---
+
+## Comando para gerar mensagem (copiar e usar)
+
+**Mensagem curta (uma linha)** — para `git commit -m "..."`:
+- Terminal: `.\scripts\gerar-commit-ptbr.ps1`
+- Cursor: **Tasks: Run Task** → **Gerar mensagem de commit (pt-BR)**
+
+**Mensagem detalhada (título + corpo com lista de arquivos)** — para `git commit` (abre o editor; cole o bloco):
+- Terminal: `.\scripts\gerar-commit-ptbr.ps1 -Detalhado`
+- Cursor: **Tasks: Run Task** → **Gerar mensagem de commit detalhada (pt-BR)**
+
+O script lê o `git status`, infere tipo/escopo/descrição em pt-BR. Com `-Detalhado`, gera título + lista de arquivos (novo/alterado/removido) no corpo.

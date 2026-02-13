@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj",
+      "projectUniqueName": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj",
       "projectName": "Catalogo.Core",
-      "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj",
+      "projectPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Core\\Catalogo.Core.csproj",
       "packagesPath": "C:\\Users\\jose.santos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Core\\obj\\",
+      "outputPath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

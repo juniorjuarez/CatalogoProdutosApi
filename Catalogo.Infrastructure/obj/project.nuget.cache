@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uQ6s6yk36JI=",
+  "dgSpecHash": "T0iChGGS2Ns=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\APICatalogo\\CatalogoSolucao\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\jose.santos\\Documents\\VS_CODE\\BACKEND\\dotnet\\aprendizado\\UDEMY\\Macoratti\\CatalogoSolucao\\Catalogo.Infrastructure\\Catalogo.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jose.santos\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\jose.santos\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

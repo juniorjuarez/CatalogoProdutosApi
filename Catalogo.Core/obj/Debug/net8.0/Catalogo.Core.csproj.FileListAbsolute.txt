@@ -34,3 +34,15 @@ C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratt
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\refint\Catalogo.Core.dll
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\Catalogo.Core.pdb
 C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\APICatalogo\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\ref\Catalogo.Core.dll
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\CatalogoSolucao\Catalogo.Core\bin\Debug\net8.0\Catalogo.Core.deps.json
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\CatalogoSolucao\Catalogo.Core\bin\Debug\net8.0\Catalogo.Core.dll
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\CatalogoSolucao\Catalogo.Core\bin\Debug\net8.0\Catalogo.Core.pdb
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\Catalogo.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\Catalogo.Core.AssemblyInfoInputs.cache
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\Catalogo.Core.AssemblyInfo.cs
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\Catalogo.Core.csproj.CoreCompileInputs.cache
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\Catalogo.Core.sourcelink.json
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\Catalogo.Core.dll
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\refint\Catalogo.Core.dll
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\Catalogo.Core.pdb
+C:\Users\jose.santos\Documents\VS_CODE\BACKEND\dotnet\aprendizado\UDEMY\Macoratti\CatalogoSolucao\Catalogo.Core\obj\Debug\net8.0\ref\Catalogo.Core.dll
