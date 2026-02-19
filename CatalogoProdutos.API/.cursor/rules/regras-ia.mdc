@@ -1,0 +1,34 @@
+---
+alwaysApply: true
+description: Regras de interação com IA e commits em português
+---
+
+# Regras de IA e Commits - CatalogoProdutos.API
+
+## Commits em Português do Brasil
+
+**OBRIGATÓRIO:** Sempre gerar mensagens de commit em português do Brasil (pt-BR).
+
+**Padrão:** Conventional Commits em português:
+- `feat:` - Nova funcionalidade
+- `fix:` - Correção de bug
+- `docs:` - Documentação
+- `style:` - Formatação, ponto e vírgula, etc
+- `refactor:` - Refatoração de código
+- `test:` - Testes
+- `chore:` - Tarefas de build, configuração, etc
+
+**Exemplos:**
+- `feat: adiciona endpoint de listagem de produtos`
+- `fix: corrige validação de estoque negativo`
+- `docs: atualiza README com instruções de instalação`
+
+## Regras Gerais de IA
+
+Consulte as regras completas em: `C:\Users\jose.santos\Documents\VS_CODE\BACKEND\doc_interna_jose\REGRAS_IA_MELHORADAS.md`
+
+**Resumo:**
+- Modo [ESTUDO]: Aprendizado guiado, ciclo de validação obrigatório
+- Modo [TRABALHO]: Análise direta, código apenas se pedido explicitamente
+- Sempre explicar contexto (por que, quando usar)
+- Respeitar arquitetura do projeto
